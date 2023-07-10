@@ -5,7 +5,7 @@ def add(a, b):
     :param b: the second number
     :return: the sum of the two numbers
     """
-    return None
+    return a+b
 
 
 def sub(a, b):
@@ -15,7 +15,7 @@ def sub(a, b):
     :param b: the second number
     :return: the subtraction of the two numbers
     """
-    return None
+    return a-b
 
 
 def mul(a, b):

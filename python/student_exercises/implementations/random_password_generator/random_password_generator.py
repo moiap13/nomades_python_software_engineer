@@ -16,18 +16,8 @@ def generate_random_password(length=12):
         raise ValueError("Password length should be at least 8 characters.")
 
     # Generate the random password
-    password = random.sample(lowercase_letters, 1) + \
-               random.sample(uppercase_letters, 1) + \
-               random.sample(digits, 1) + \
-               random.sample(special_chars, 1) + \
-               random.sample(all_chars, length - 4)
-
     # Shuffle the password characters
-    random.shuffle(password)
-
     # Convert the list of characters into a string
-    password = ''.join(password)
-
     return password
 
 # Example usage
