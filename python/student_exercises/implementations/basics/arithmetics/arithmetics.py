@@ -1,4 +1,4 @@
-def add(a, b):
+def add(a:int, b:int) -> int:
     """
     Function that returns the sum of two numbers
     :param a: the first number
@@ -6,7 +6,6 @@ def add(a, b):
     :return: the sum of the two numbers
     """
     return a+b
-
 
 def sub(a, b):
     """
@@ -25,7 +24,7 @@ def mul(a, b):
     :param b: the second number
     :return: the multiplication of the two numbers
     """
-    return None
+    return a*b
 
 
 def div(a, b):
@@ -39,4 +38,4 @@ def div(a, b):
     if b == 0:
         raise ZeroDivisionError('Division by zero')
     
-    return None
+    return a/b
