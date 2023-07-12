@@ -19,7 +19,7 @@ def somme(n): # O(n) -> O(1)
     # for i in range (1, n+1):
     #     total +=i
     # return total
-    return (n(n+1))//2
+    return (n*(n+1))//2
 
 def auCarre(n): # O(1)
     return n*n 
