@@ -1,3 +1,7 @@
-from arithmetics import add
 
-print(add(2, 3))  
+i = 1
+n = 5
+
+while i <= n:
+    print(i)
+    i += 1
