@@ -1,21 +1,5 @@
 import unittest
-from my_dictionaries import (
-    create_empty_dictionary,
-    add_key_value,
-    get_value,
-    check_key,
-    remove_key_value,
-    count_key_value_pairs,
-    get_keys,
-    get_values,
-    get_items,
-    update_values,
-    merge_dictionaries,
-    clear_dictionary,
-    find_key_with_max_value,
-    find_key_with_min_value,
-    check_same_key_value_pairs,
-)
+from my_dictionaries import *
 
 class TestDictionaryFunctions(unittest.TestCase):
 

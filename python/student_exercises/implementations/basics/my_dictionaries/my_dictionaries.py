@@ -1,44 +1,291 @@
-def create_empty_dictionary():
+def create_empty_dictionary() -> dict:
+    """
+    Create an empty dictionary.
+
+    Returns:
+        dict: An empty dictionary.
+
+    Example:
+        >>> create_empty_dictionary()
+        {}
+    """
     return None
 
-def add_key_value(dictionary, key, value):
+
+def add_key_value(dictionary: dict, key, value):
+    """
+    Add a key-value pair to the dictionary.
+
+    Args:
+        dictionary (dict): The dictionary to add the key-value pair to.
+        key: The key to add.
+        value: The value to add.
+
+    Example:
+        >>> dictionary = {}
+        >>> add_key_value(dictionary, "key1", "value1")
+        >>> dictionary
+        {'key1': 'value1'}
+        >>> add_key_value(dictionary, "key2", "value2")
+        >>> dictionary
+        {'key1': 'value1', 'key2': 'value2'}
+    """
     pass
 
-def get_value(dictionary, key):
+
+def get_value(dictionary: dict, key):
+    """
+    Get the value associated with a key from the dictionary.
+
+    Args:
+        dictionary (dict): The dictionary to retrieve the value from.
+        key: The key to retrieve the value for.
+
+    Returns:
+        The value associated with the key, or None if the key is not found.
+
+    Example:
+        >>> dictionary = {"key1": "value1", "key2": "value2"}
+        >>> get_value(dictionary, "key1")
+        'value1'
+        >>> get_value(dictionary, "key3")
+        None
+    """
     return None
 
-def check_key(dictionary, key):
+
+def check_key(dictionary: dict, key) -> bool:
+    """
+    Check if a key exists in the dictionary.
+
+    Args:
+        dictionary (dict): The dictionary to check.
+        key: The key to check for.
+
+    Returns:
+        bool: True if the key exists in the dictionary, False otherwise.
+
+    Example:
+        >>> dictionary = {"key1": "value1", "key2": "value2"}
+        >>> check_key(dictionary, "key1")
+        True
+        >>> check_key(dictionary, "key3")
+        False
+    """
     return None
 
-def remove_key_value(dictionary, key):
+
+def remove_key_value(dictionary: dict, key):
+    """
+    Remove a key-value pair from the dictionary.
+
+    Args:
+        dictionary (dict): The dictionary to remove the key-value pair from.
+        key: The key to remove.
+
+    Example:
+        >>> dictionary = {"key1": "value1", "key2": "value2"}
+        >>> remove_key_value(dictionary, "key1")
+        >>> dictionary
+        {'key2': 'value2'}
+    """
     pass
 
-def count_key_value_pairs(dictionary):
+
+def count_key_value_pairs(dictionary: dict) -> int:
+    """
+    Count the number of key-value pairs in the dictionary.
+
+    Args:
+        dictionary (dict): The dictionary to count the key-value pairs.
+
+    Returns:
+        int: The number of key-value pairs in the dictionary.
+
+    Example:
+        >>> dictionary = {"key1": "value1", "key2": "value2"}
+        >>> count_key_value_pairs(dictionary)
+        2
+        >>> dictionary = {}
+        >>> count_key_value_pairs(dictionary)
+        0
+    """
     return None
 
-def get_keys(dictionary):
+
+def get_keys(dictionary: dict) -> list:
+    """
+    Get a list of keys from the dictionary.
+
+    Args:
+        dictionary (dict): The dictionary to retrieve the keys from.
+
+    Returns:
+        list: A list of keys from the dictionary.
+
+    Example:
+        >>> dictionary = {"key1": "value1", "key2": "value2"}
+        >>> get_keys(dictionary)
+        ['key1', 'key2']
+        >>> dictionary = {}
+        >>> get_keys(dictionary)
+        []
+    """
     return None
 
-def get_values(dictionary):
+
+def get_values(dictionary: dict) -> list:
+    """
+    Get a list of values from the dictionary.
+
+    Args:
+        dictionary (dict): The dictionary to retrieve the values from.
+
+    Returns:
+        list: A list of values from the dictionary.
+
+    Example:
+        >>> dictionary = {"key1": "value1", "key2": "value2"}
+        >>> get_values(dictionary)
+        ['value1', 'value2']
+        >>> dictionary = {}
+        >>> get_values(dictionary)
+        []
+    """
     return None
 
-def get_items(dictionary):
+
+def get_items(dictionary: dict) -> list:
+    """
+    Get a list of key-value pairs from the dictionary.
+
+    Args:
+        dictionary (dict): The dictionary to retrieve the key-value pairs from.
+
+    Returns:
+        list: A list of key-value pairs from the dictionary.
+
+    Example:
+        >>> dictionary = {"key1": "value1", "key2": "value2"}
+        >>> get_items(dictionary)
+        [('key1', 'value1'), ('key2', 'value2')]
+        >>> dictionary = {}
+        >>> get_items(dictionary)
+        []
+    """
     return None
 
-def update_values(dictionary, key, value):
+
+def update_values(dictionary: dict, key, value):
+    """
+    Update the value associated with a key in the dictionary.
+
+    Args:
+        dictionary (dict): The dictionary to update the value in.
+        key: The key to update.
+        value: The new value to assign.
+
+    Example:
+        >>> dictionary = {"key1": "value1", "key2": "value2"}
+        >>> update_values(dictionary, "key1", "new_value1")
+        >>> dictionary
+        {'key1': 'new_value1', 'key2': 'value2'}
+        >>> update_values(dictionary, "key3", "value3")  # No error should be raised
+    """
     pass
 
-def merge_dictionaries(dictionary1, dictionary2):
+
+def merge_dictionaries(dictionary1: dict, dictionary2: dict) -> dict:
+    """
+    Merge two dictionaries into a new dictionary.
+
+    Args:
+        dictionary1 (dict): The first dictionary to merge.
+        dictionary2 (dict): The second dictionary to merge.
+
+    Returns:
+        dict: A new dictionary containing the merged key-value pairs.
+
+    Example:
+        >>> dictionary1 = {"key1": "value1"}
+        >>> dictionary2 = {"key2": "value2"}
+        >>> merge_dictionaries(dictionary1, dictionary2)
+        {'key1': 'value1', 'key2': 'value2'}
+    """
     return None
 
-def clear_dictionary(dictionary):
+
+def clear_dictionary(dictionary: dict):
+    """
+    Clear all key-value pairs from the dictionary.
+
+    Args:
+        dictionary (dict): The dictionary to clear.
+
+    Example:
+        >>> dictionary = {"key1": "value1", "key2": "value2"}
+        >>> clear_dictionary(dictionary)
+        >>> dictionary
+        {}
+    """
     pass
 
-def find_key_with_max_value(dictionary):
+
+def find_key_with_max_value(dictionary: dict):
+    """
+    Find the key with the maximum value in the dictionary.
+
+    Args:
+        dictionary (dict): The dictionary to search.
+
+    Returns:
+        The key with the maximum value, or None if the dictionary is empty.
+
+    Example:
+        >>> dictionary = {"key1": 10, "key2": 20, "key3": 5}
+        >>> find_key_with_max_value(dictionary)
+        'key2'
+    """
     return None
 
-def find_key_with_min_value(dictionary):
+
+def find_key_with_min_value(dictionary: dict):
+    """
+    Find the key with the minimum value in the dictionary.
+
+    Args:
+        dictionary (dict): The dictionary to search.
+
+    Returns:
+        The key with the minimum value, or None if the dictionary is empty.
+
+    Example:
+        >>> dictionary = {"key1": 10, "key2": 20, "key3": 5}
+        >>> find_key_with_min_value(dictionary)
+        'key3'
+    """
     return None
 
-def check_same_key_value_pairs(dictionary1, dictionary2):
+
+def check_same_key_value_pairs(dictionary1: dict, dictionary2: dict) -> bool:
+    """
+    Check if two dictionaries have the same key-value pairs.
+
+    Args:
+        dictionary1 (dict): The first dictionary to compare.
+        dictionary2 (dict): The second dictionary to compare.
+
+    Returns:
+        bool: True if the dictionaries have the same key-value pairs, False otherwise.
+
+    Example:
+        >>> dictionary1 = {"key1": "value1", "key2": "value2"}
+        >>> dictionary2 = {"key2": "value2", "key1": "value1"}
+        >>> check_same_key_value_pairs(dictionary1, dictionary2)
+        True
+        >>> dictionary3 = {"key1": "value1", "key2": "value2"}
+        >>> dictionary4 = {"key1": "value1", "key2": "value3"}
+        >>> check_same_key_value_pairs(dictionary3, dictionary4)
+        False
+    """
     return None

@@ -15,6 +15,12 @@ class TestSetFunctions(unittest.TestCase):
         self.assertEqual(len(s), 5)
         self.assertEqual(s, set(lst))
 
+        lst2 = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+        s2 = create_set_from_list(lst2)
+        self.assertIsInstance(s2, set)
+        self.assertEqual(len(s2), 5)
+        self.assertEqual(s2, set(lst))
+
     def test_add_element(self):
         s = set()
         add_element(s, 1)

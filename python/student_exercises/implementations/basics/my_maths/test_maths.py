@@ -1,6 +1,6 @@
 import unittest
 
-from my_maths import estPair, factorielle, fibonacci, somme, auCarre, est_premier
+from my_maths import *
 
 
 class TestFunctions(unittest.TestCase):

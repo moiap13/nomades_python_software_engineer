@@ -3,6 +3,7 @@ import os
 # Function to draw the tic-tac-toe board
 def draw_board(board):
     os.system('cls' if os.name == 'nt' else 'clear')  # Clear the console
+    # TODO: Draw the board with the values at the rigth places
 
 # Function to check if a player has won
 def check_win(board, player):
@@ -24,7 +25,6 @@ def play_game():
         move = input("Player {}: Enter your move (1-9): ".format(current_player))
 
         # TODO: Check if move is valid
-
 
         # TODO: Update the board with the move
 
