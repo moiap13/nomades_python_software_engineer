@@ -18,7 +18,7 @@ def generate_random_password(length=12):
     # Generate the random password
     # Shuffle the password characters
     # Convert the list of characters into a string
-    password = ""
+    password = "".join(random.choice(all_chars) for _ in range(length))
     return password
 
 # Example usage
