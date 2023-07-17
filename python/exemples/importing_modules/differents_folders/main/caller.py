@@ -5,6 +5,8 @@ import os
 sub_directory = os.path.join(os.path.dirname(__file__), '../modules')
 sys.path.append(sub_directory)
 
-import callee
 
-callee.say_hello()
+n=-2
+if n > 0:
+    import callee
+    callee.say_hello()
