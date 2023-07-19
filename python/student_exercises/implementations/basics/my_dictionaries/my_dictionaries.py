@@ -9,7 +9,7 @@ def create_empty_dictionary() -> dict:
         >>> create_empty_dictionary()
         {}
     """
-    return None
+    return {}
 
 
 def add_key_value(dictionary: dict, key, value):
@@ -30,8 +30,7 @@ def add_key_value(dictionary: dict, key, value):
         >>> dictionary
         {'key1': 'value1', 'key2': 'value2'}
     """
-    pass
-
+    dictionary[key] = value
 
 def get_value(dictionary: dict, key):
     """
@@ -51,7 +50,7 @@ def get_value(dictionary: dict, key):
         >>> get_value(dictionary, "key3")
         None
     """
-    return None
+    return dictionary.get(key)
 
 
 def check_key(dictionary: dict, key) -> bool:
@@ -72,7 +71,7 @@ def check_key(dictionary: dict, key) -> bool:
         >>> check_key(dictionary, "key3")
         False
     """
-    return None
+    return key in dictionary
 
 
 def remove_key_value(dictionary: dict, key):
@@ -89,7 +88,7 @@ def remove_key_value(dictionary: dict, key):
         >>> dictionary
         {'key2': 'value2'}
     """
-    pass
+    dictionary.pop(key)
 
 
 def count_key_value_pairs(dictionary: dict) -> int:
@@ -110,7 +109,7 @@ def count_key_value_pairs(dictionary: dict) -> int:
         >>> count_key_value_pairs(dictionary)
         0
     """
-    return None
+    return len(dictionary)
 
 
 def get_keys(dictionary: dict) -> list:
@@ -131,7 +130,8 @@ def get_keys(dictionary: dict) -> list:
         >>> get_keys(dictionary)
         []
     """
-    return None
+    return list(dictionary.keys())
+
 
 
 def get_values(dictionary: dict) -> list:
@@ -152,7 +152,7 @@ def get_values(dictionary: dict) -> list:
         >>> get_values(dictionary)
         []
     """
-    return None
+    return list(dictionary.values())
 
 
 def get_items(dictionary: dict) -> list:
@@ -173,7 +173,7 @@ def get_items(dictionary: dict) -> list:
         >>> get_items(dictionary)
         []
     """
-    return None
+    return list(dictionary.items())
 
 
 def update_values(dictionary: dict, key, value):
@@ -192,7 +192,7 @@ def update_values(dictionary: dict, key, value):
         {'key1': 'new_value1', 'key2': 'value2'}
         >>> update_values(dictionary, "key3", "value3")  # No error should be raised
     """
-    pass
+    dictionary[key] = value
 
 
 def merge_dictionaries(dictionary1: dict, dictionary2: dict) -> dict:
@@ -212,7 +212,9 @@ def merge_dictionaries(dictionary1: dict, dictionary2: dict) -> dict:
         >>> merge_dictionaries(dictionary1, dictionary2)
         {'key1': 'value1', 'key2': 'value2'}
     """
-    return None
+    dictionary1.update(dictionary2)
+    return dictionary1
+    # return {**dictionary1, **dictionary2}
 
 
 def clear_dictionary(dictionary: dict):
@@ -228,7 +230,7 @@ def clear_dictionary(dictionary: dict):
         >>> dictionary
         {}
     """
-    pass
+    dictionary.clear()
 
 
 def find_key_with_max_value(dictionary: dict):
@@ -246,7 +248,15 @@ def find_key_with_max_value(dictionary: dict):
         >>> find_key_with_max_value(dictionary)
         'key2'
     """
-    return None
+    import math
+    max_key, max_value = "", -math.inf
+
+    for k, v in dictionary.items():
+        if max_value < v:
+            max_key = k
+            max_value = v
+    
+    return max_key
 
 
 def find_key_with_min_value(dictionary: dict):
@@ -264,7 +274,15 @@ def find_key_with_min_value(dictionary: dict):
         >>> find_key_with_min_value(dictionary)
         'key3'
     """
-    return None
+    import math
+    min_key, min_value = "", math.inf
+
+    for k, v in dictionary.items():
+        if min_value > v:
+            min_key = k
+            min_value = v
+    
+    return min_key
 
 
 def check_same_key_value_pairs(dictionary1: dict, dictionary2: dict) -> bool:
@@ -288,4 +306,15 @@ def check_same_key_value_pairs(dictionary1: dict, dictionary2: dict) -> bool:
         >>> check_same_key_value_pairs(dictionary3, dictionary4)
         False
     """
-    return None
+    # for k, v in dictionary1.items():
+    #     if k not in dictionary2:
+    #         return False
+        
+    #     assert(k in dictionary2)
+
+    #     if v != dictionary2[k]:
+    #         return False
+        
+    # return True
+
+    return len(dict(dictionary1.items() & dictionary2.items())) == len(dictionary1)

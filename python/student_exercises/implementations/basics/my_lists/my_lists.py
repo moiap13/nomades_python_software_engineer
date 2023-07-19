@@ -9,7 +9,8 @@ def get_first_three_elements(lst: list) -> list:
     >>> get_first_three_elements([1]) -> [1]
     >>> get_first_three_elements([1, 2]) -> [1, 2]
     """
-    return None
+    return lst[:3]
+        
 
 def get_last_two_elements(lst: list) -> list:
     """
@@ -22,7 +23,7 @@ def get_last_two_elements(lst: list) -> list:
     >>> get_last_two_elements([1]) -> [1]
     >>> get_last_two_elements([1, 2]) -> [1, 2]
     """
-    return None
+    return lst[-2:]
 
 def reverse_list(lst: list) -> list:
     """
@@ -35,7 +36,7 @@ def reverse_list(lst: list) -> list:
     >>> reverse_list([1]) -> [1]
     >>> reverse_list([1, 2]) -> [2, 1]
     """
-    return None
+    return lst[::-1]
 
 def get_even_index_elements(lst: list) -> list:
     """
@@ -48,7 +49,7 @@ def get_even_index_elements(lst: list) -> list:
     >>> get_even_index_elements([1]) -> [1]
     >>> get_even_index_elements([1, 2]) -> [1]
     """
-    return None
+    return lst[::2]
 
 def get_odd_index_elements(lst: list) -> list:
     """
@@ -61,7 +62,7 @@ def get_odd_index_elements(lst: list) -> list:
     >>> get_odd_index_elements([1]) -> []
     >>> get_odd_index_elements([1, 2]) -> [2]
     """
-    return None
+    return lst[1::2]
 
 def remove_duplicates(lst: list) -> list:
     """
@@ -75,7 +76,7 @@ def remove_duplicates(lst: list) -> list:
     >>> remove_duplicates([1, 1, 1]) -> [1]
     >>> remove_duplicates([1, 2, 3]) -> [1, 2, 3]
     """
-    return None
+    return list(set(lst))
 
 def square_elements(lst: list) -> list:
     """
@@ -88,7 +89,8 @@ def square_elements(lst: list) -> list:
     >>> square_elements([0]) -> [0]
     >>> square_elements([-1, 2, -3]) -> [1, 4, 9]
     """
-    return None
+    return [x**2 for x in lst]
+    # return list(map(lambda x: x*x, lst))
 
 def double_elements(lst: list) -> list:
     """
@@ -101,7 +103,8 @@ def double_elements(lst: list) -> list:
     >>> double_elements([0]) -> [0]
     >>> double_elements([-1, 2, -3]) -> [-2, 4, -6]
     """
-    return None
+    return [i*2 for i in lst]
+    #return list(map(lambda x: x+x, lst))
 
 def sum_of_elements(lst: list) -> int:
     """
@@ -114,7 +117,18 @@ def sum_of_elements(lst: list) -> int:
     >>> sum_of_elements([1]) -> 1
     >>> sum_of_elements([1, -1]) -> 0
     """
-    return None
+    if lst == []:
+      return 0
+    elif len(lst) == 1:
+        return lst[0]
+    
+    return lst.pop() + sum_of_elements(lst)
+
+    # ret = 0
+    # for i in lst:
+    #     ret += i
+    
+    # return ret
 
 def is_sorted(lst: list) -> bool:
     """
@@ -129,7 +143,15 @@ def is_sorted(lst: list) -> bool:
     >>> is_sorted([1, 1, 1]) -> True
     >>> is_sorted([1, 2, 1]) -> False
     """
-    return None
+    # last_elem = 0 # O(n)
+    # for i in lst:
+    #     if i < last_elem:
+    #         return False
+    #     last_elem = i
+
+    # return True
+
+    return sorted(lst) == lst # O(nlog(n))
 
 def count_occurrences(lst: list, element: int) -> int:
     """
@@ -144,9 +166,16 @@ def count_occurrences(lst: list, element: int) -> int:
     >>> count_occurrences([], 1) -> 0
     >>> count_occurrences([1, 1, 1], 1) -> 3
     """
-    return None
+    cnt = 0
+    for item in lst:
+        if item == element:
+            cnt += 1
+    
+    return cnt
+      
+    
 
-def find_maximum(lst: list) -> int:
+def find_maximum(lst: list) -> int: # O(n)
     """
     Return the maximum element of the list
     :param lst: The list
@@ -157,7 +186,16 @@ def find_maximum(lst: list) -> int:
     >>> find_maximum([1]) -> 1
     >>> find_maximum([-1, -2, -3]) -> -1
     """
-    return None
+    # lst.sort() => O(nlog(n))
+    if lst == []:
+      return None
+    
+    import math
+    max_elem = -math.inf
+    for item in lst:
+        if item > max_elem:
+            max_elem = item
+    return max_elem
 
 def find_minimum(lst: list) -> int:
     """
@@ -170,7 +208,15 @@ def find_minimum(lst: list) -> int:
     >>> find_minimum([1]) -> 1
     >>> find_minimum([-1, -2, -3]) -> -3
     """
-    return None
+    if lst == []:
+      return None
+    
+    import math
+    max_elem = math.inf
+    for item in lst:
+        if item < max_elem:
+            max_elem = item
+    return max_elem
 
 def combine_lists(lst1: list, lst2: list) -> list:
     """
@@ -183,7 +229,13 @@ def combine_lists(lst1: list, lst2: list) -> list:
     >>> combine_lists([], []) -> []
     >>> combine_lists([1], [2]) -> [1, 2]
     """
-    return None
+    ret = []
+    for i in range(len(lst1)):
+        ret.append(lst1[i])
+        ret.append(lst2[i])
+    
+    return ret
+        
 
 def is_palindrome(lst: list) -> bool:
     """
@@ -197,4 +249,4 @@ def is_palindrome(lst: list) -> bool:
     >>> is_palindrome([1]) -> True
     >>> is_palindrome([2, 2, 1]) -> False
     """
-    return None
+    return reverse_list(lst) == lst
