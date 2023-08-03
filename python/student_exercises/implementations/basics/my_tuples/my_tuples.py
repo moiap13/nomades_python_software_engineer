@@ -9,7 +9,7 @@ def create_empty_tuple() -> tuple:
         >>> create_empty_tuple()
         ()
     """
-    return None
+    return ()
 
 
 def create_tuple_from_list(lst: list) -> tuple:
@@ -27,7 +27,7 @@ def create_tuple_from_list(lst: list) -> tuple:
         >>> create_tuple_from_list(lst)
         (1, 2, 3, 4, 5)
     """
-    return None
+    return tuple(lst)
 
 
 def access_element(t: tuple, index: int):
@@ -46,7 +46,7 @@ def access_element(t: tuple, index: int):
         >>> access_element(t, 2)
         3
     """
-    return None
+    return t[index]
 
 
 def slice_tuple(t: tuple, start: int, end: int) -> tuple:
@@ -66,7 +66,7 @@ def slice_tuple(t: tuple, start: int, end: int) -> tuple:
         >>> slice_tuple(t, 1, 4)
         (2, 3, 4)
     """
-    return None
+    return t[start:end]
 
 
 def check_element(t: tuple, element) -> bool:
@@ -85,7 +85,7 @@ def check_element(t: tuple, element) -> bool:
         >>> check_element(t, 3)
         True
     """
-    return None
+    return element in t
 
 
 def get_tuple_length(t: tuple) -> int:
@@ -103,7 +103,7 @@ def get_tuple_length(t: tuple) -> int:
         >>> get_tuple_length(t)
         5
     """
-    return None
+    return len(t)
 
 
 def concatenate_tuples(t1: tuple, t2: tuple) -> tuple:
@@ -123,7 +123,7 @@ def concatenate_tuples(t1: tuple, t2: tuple) -> tuple:
         >>> concatenate_tuples(t1, t2)
         (1, 2, 3, 4, 5, 6)
     """
-    return None
+    return t1 + t2
 
 
 def count_occurrences(t: tuple, element) -> int:
@@ -142,7 +142,7 @@ def count_occurrences(t: tuple, element) -> int:
         >>> count_occurrences(t, 2)
         2
     """
-    return None
+    return t.count(element)
 
 
 def find_index(t: tuple, element):
@@ -164,7 +164,7 @@ def find_index(t: tuple, element):
         >>> find_index(t, 3)
         2
     """
-    return None
+    return t.count(element)
 
 
 def check_equal(t1: tuple, t2: tuple) -> bool:
@@ -184,7 +184,7 @@ def check_equal(t1: tuple, t2: tuple) -> bool:
         >>> check_equal(t1, t2)
         True
     """
-    return None
+    return t1 == t2
 
 
 def find_maximum(t: tuple):
@@ -202,7 +202,7 @@ def find_maximum(t: tuple):
         >>> find_maximum(t)
         5
     """
-    return None
+    return max(t)
 
 
 def find_minimum(t: tuple):
@@ -220,7 +220,7 @@ def find_minimum(t: tuple):
         >>> find_minimum(t)
         1
     """
-    return None
+    return min(t)
 
 
 def convert_tuple_to_list(t: tuple) -> list:
@@ -238,7 +238,7 @@ def convert_tuple_to_list(t: tuple) -> list:
         >>> convert_tuple_to_list(t)
         [1, 2, 3, 4, 5]
     """
-    return None
+    return list(t)
 
 
 def convert_list_to_tuple(lst: list) -> tuple:
@@ -256,7 +256,7 @@ def convert_list_to_tuple(lst: list) -> tuple:
         >>> convert_list_to_tuple(lst)
         (1, 2, 3, 4, 5)
     """
-    return None
+    return tuple(lst)
 
 
 def sort_tuple(t: tuple) -> tuple:
@@ -274,4 +274,4 @@ def sort_tuple(t: tuple) -> tuple:
         >>> sort_tuple(t)
         (1, 2, 3, 4, 5)
     """
-    return None
+    return tuple(sorted(t))

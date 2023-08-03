@@ -9,7 +9,7 @@ def create_empty_set() -> set:
         >>> create_empty_set()
         set()
     """
-    return None
+    return set()
 
 
 def create_set_from_list(lst: list) -> set:
@@ -31,7 +31,7 @@ def create_set_from_list(lst: list) -> set:
         >>> create_set_from_list(lst)
         {1, 2, 3, 4, 5}
     """
-    return None
+    return set(lst)
 
 
 def add_element(s: set, element):
@@ -48,7 +48,7 @@ def add_element(s: set, element):
         >>> s
         {1}
     """
-    pass
+    s.add(element)
 
 
 def remove_element(s: set, element):
@@ -65,7 +65,7 @@ def remove_element(s: set, element):
         >>> s
         {1, 3}
     """
-    pass
+    s.remove(element)
 
 
 def check_element(s: set, element) -> bool:
@@ -86,7 +86,7 @@ def check_element(s: set, element) -> bool:
         >>> check_element(s, 4)
         False
     """
-    return None
+    return element in s
 
 
 def count_elements(s: set) -> int:
@@ -104,7 +104,7 @@ def count_elements(s: set) -> int:
         >>> count_elements(s)
         5
     """
-    return None
+    return len(s)
 
 
 def union_sets(s1: set, s2: set) -> set:
@@ -124,7 +124,7 @@ def union_sets(s1: set, s2: set) -> set:
         >>> union_sets(s1, s2)
         {1, 2, 3, 4, 5}
     """
-    return None
+    return s1.union(s2)
 
 
 def intersect_sets(s1: set, s2: set) -> set:
@@ -144,7 +144,7 @@ def intersect_sets(s1: set, s2: set) -> set:
         >>> intersect_sets(s1, s2)
         {3}
     """
-    return None
+    return s1.intersection(s2)
 
 
 def difference_sets(s1: set, s2: set) -> set:
@@ -164,7 +164,7 @@ def difference_sets(s1: set, s2: set) -> set:
         >>> difference_sets(s1, s2)
         {1, 2}
     """
-    return None
+    return s1.difference(s2)
 
 
 def check_subset(s1: set, s2: set) -> bool:
@@ -186,7 +186,7 @@ def check_subset(s1: set, s2: set) -> bool:
         >>> check_subset(s2, s1)
         False
     """
-    return None
+    return s1.issubset(s2)
 
 
 def check_disjoint(s1: set, s2: set) -> bool:
@@ -208,7 +208,7 @@ def check_disjoint(s1: set, s2: set) -> bool:
         >>> check_disjoint(s1, {3, 4})
         False
     """
-    return None
+    return s1.isdisjoint(s2)
 
 
 def clear_set(s: set):
@@ -224,7 +224,7 @@ def clear_set(s: set):
         >>> s
         set()
     """
-    pass
+    s.clear()
 
 
 def copy_set(s: set) -> set:
@@ -243,7 +243,7 @@ def copy_set(s: set) -> set:
         >>> s_copy
         {1, 2, 3}
     """
-    return None
+    return s.copy()
 
 
 def find_maximum(s: set):
@@ -261,7 +261,7 @@ def find_maximum(s: set):
         >>> find_maximum(s)
         5
     """
-    return None
+    return max(s)
 
 
 def check_equal(s1: set, s2: set) -> bool:
@@ -284,4 +284,4 @@ def check_equal(s1: set, s2: set) -> bool:
         >>> check_equal(s1, s3)
         False
     """
-    return None
+    return s1 == s2

@@ -32,7 +32,10 @@ def read_students_csv():
 
     Returns: None
     """
-    pass
+    with open('students.csv', mode='r') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            print(row)
 
 
 def calculate_average_age():
@@ -44,7 +47,19 @@ def calculate_average_age():
     Returns:
     - average_age (float): The average age of students.
     """
-    return None
+    total_age = 0
+    student_count = 0
+
+    with open('students.csv', mode='r') as file:
+        reader = csv.reader(file)
+        next(reader)  # Skip the header row
+        for row in reader:
+            age = int(row[1])
+            total_age += age
+            student_count += 1
+
+    average_age = total_age / student_count
+    return average_age
 
 
 def create_student_grades_chart():
@@ -55,7 +70,19 @@ def create_student_grades_chart():
 
     Returns: None
     """
-    pass
+    grades = []
+    with open('students.csv', mode='r') as file:
+        reader = csv.reader(file)
+        next(reader)  # Skip the header row
+        for row in reader:
+            grade = int(row[2])
+            grades.append(grade)
+
+    plt.bar(['John', 'Alice', 'Bob'], grades)
+    plt.xlabel('Student')
+    plt.ylabel('Grade')
+    plt.title('Student Grades')
+    plt.show()
 
 
 def create_sales_csv():
@@ -73,7 +100,11 @@ def create_sales_csv():
         ['March', '5500']
     ]
 
-    csv_file = 'sales.csv'
+    with open('sales.csv', mode='w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows(data)
+
+    print("CSV file created successfully!")
 
 
 def calculate_total_sales():
@@ -85,7 +116,16 @@ def calculate_total_sales():
     Returns:
     - total_sales (int): The total sales value.
     """
-    return None
+    total_sales = 0
+
+    with open('sales.csv', mode='r') as file:
+        reader = csv.reader(file)
+        next(reader)  # Skip the header row
+        for row in reader:
+            sales = int(row[1])
+            total_sales += sales
+
+    return total_sales
 
 
 def create_monthly_sales_chart():
@@ -98,7 +138,21 @@ def create_monthly_sales_chart():
     """
     months = []
     sales = []
-    
+
+    with open('sales.csv', mode='r') as file:
+        reader = csv.reader(file)
+        next(reader)  # Skip the header row
+        for row in reader:
+            month = row[0]
+            month_sales = int(row[1])
+            months.append(month)
+            sales.append(month_sales)
+
+    plt.plot(months, sales)
+    plt.xlabel('Month')
+    plt.ylabel('Sales')
+    plt.title('Monthly Sales')
+    plt.show()
 
 
 def merge_files_into_combined_csv():
@@ -108,17 +162,23 @@ def merge_files_into_combined_csv():
     Arguments: None
 
     Returns: None
-
-    Notes:
-    The combined CSV must look like :
-    
-    Name,Age,Grade,Month,Sales
-    John,15,9,January,5000
-    Alice,16,10,February,7000
-    Bob,14,8,March,5500
-
     """
-    csv_file = 'combined.csv'
+    with open('students.csv', mode='r') as students_file, open('sales.csv', mode='r') as sales_file, \
+            open('combined.csv', mode='w', newline='') as combined_file:
+
+        students_reader = csv.reader(students_file)
+        sales_reader = csv.reader(sales_file)
+        combined_writer = csv.writer(combined_file)
+
+        students_header = next(students_reader)
+        sales_header = next(sales_reader)
+
+        combined_writer.writerow(students_header + sales_header)
+
+        for students_row, sales_row in zip(students_reader, sales_reader):
+            combined_writer.writerow(students_row + sales_row)
+
+    print("Combined CSV file created successfully!")
 
 
 def read_combined_csv():
@@ -129,7 +189,10 @@ def read_combined_csv():
 
     Returns: None
     """
-    pass
+    with open('combined.csv', mode='r') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            print(row)
 
 
 def create_age_sales_scatter_plot():
@@ -142,6 +205,21 @@ def create_age_sales_scatter_plot():
     """
     ages = []
     sales = []
+
+    with open('combined.csv', mode='r') as file:
+        reader = csv.reader(file)
+        next(reader)  # Skip the header row
+        for row in reader:
+            age = int(row[1])
+            sales_value = int(row[4])
+            ages.append(age)
+            sales.append(sales_value)
+
+    plt.scatter(ages, sales)
+    plt.xlabel('Age')
+    plt.ylabel('Sales')
+    plt.title('Age vs Sales')
+    plt.show()
 
 def create_temperatures_csv():
     """
@@ -167,6 +245,12 @@ def create_temperatures_csv():
         ['December', '15']
     ]
 
+    with open('temperatures.csv', mode='w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows(data)
+
+    print("CSV file created successfully!")
+
 
 def plot_temperatures():
     """
@@ -178,6 +262,21 @@ def plot_temperatures():
     """
     months = []
     temperatures = []
+
+    with open('temperatures.csv', mode='r') as file:
+        reader = csv.reader(file)
+        next(reader)  # Skip the header row
+        for row in reader:
+            month = row[0]
+            temperature = int(row[1])
+            months.append(month)
+            temperatures.append(temperature)
+
+    plt.plot(months, temperatures)
+    plt.xlabel('Month')
+    plt.ylabel('Temperature (°C)')
+    plt.title('Monthly Temperatures')
+    plt.show()
 
 
 def create_sales_by_category_csv():
@@ -197,6 +296,12 @@ def create_sales_by_category_csv():
         ['Sports', '3500']
     ]
 
+    with open('sales_by_category.csv', mode='w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows(data)
+
+    print("CSV file created successfully!")
+
 
 def plot_sales_by_category():
     """
@@ -208,6 +313,21 @@ def plot_sales_by_category():
     """
     categories = []
     sales = []
+
+    with open('sales_by_category.csv', mode='r') as file:
+        reader = csv.reader(file)
+        next(reader)  # Skip the header row
+        for row in reader:
+            category = row[0]
+            sale = int(row[1])
+            categories.append(category)
+            sales.append(sale)
+
+    plt.bar(categories, sales)
+    plt.xlabel('Category')
+    plt.ylabel('Sales')
+    plt.title('Sales by Category')
+    plt.show()
 
 
 def create_population_csv():
@@ -228,6 +348,12 @@ def create_population_csv():
         ['Brazil', '213993437']
     ]
 
+    with open('population.csv', mode='w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows(data)
+
+    print("CSV file created successfully!")
+
 
 def plot_population_pie_chart():
     """
@@ -239,6 +365,19 @@ def plot_population_pie_chart():
     """
     countries = []
     populations = []
+
+    with open('population.csv', mode='r') as file:
+        reader = csv.reader(file)
+        next(reader)  # Skip the header row
+        for row in reader:
+            country = row[0]
+            population = int(row[1])
+            countries.append(country)
+            populations.append(population)
+
+    plt.pie(populations, labels=countries, autopct='%1.1f%%')
+    plt.title('Population by Country')
+    plt.show()
 
 def print_menu():
     """
