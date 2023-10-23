@@ -88,7 +88,7 @@ class TestArrayFunctions(unittest.TestCase):
         self.assertFalse(est_tableau(1))
 
     def test_estTableauDeNombres(self):
-        self.assertTrue(est_tableau_de_nombres([]))
+        self.assertFalse(est_tableau_de_nombres([]))
         self.assertTrue(est_tableau_de_nombres([1, 2, 3]))
         self.assertFalse(est_tableau_de_nombres([1, 2, "3"]))
         self.assertFalse(est_tableau_de_nombres(1))
