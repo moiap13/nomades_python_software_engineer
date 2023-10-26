@@ -6,7 +6,6 @@ exercises/
 __pycache__/
 
 # To Be deleted
-guess_number/
 random_password_generator/
 some_small_exercises/
 input_io/
