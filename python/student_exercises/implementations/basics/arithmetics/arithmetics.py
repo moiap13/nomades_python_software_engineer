@@ -1,4 +1,4 @@
-def add(a, b):
+def add(a: int, b: int):
     """
     Function that returns the sum of two numbers
     :param a: the first number
@@ -25,7 +25,7 @@ def mul(a, b):
     :param b: the second number
     :return: the multiplication of the two numbers
     """
-    return None
+    return a * b
 
 
 def div(a, b):
@@ -39,4 +39,18 @@ def div(a, b):
     if b == 0:
         raise ZeroDivisionError('Division by zero')
     
-    return None
+    return a / b
+
+print("NAME", __name__)
+
+if __name__ == "__main__": 
+    # this mean that i'm executing the python file
+    number1 = int(input("Enter number 1 "))
+    number2 = input("Enter number 2 ")
+
+    result = mul(number1, (number2))
+
+    print(f"Number1: {number1} * Number2 {(number2)} = {result}")
+
+
+print("hello from outside if")
