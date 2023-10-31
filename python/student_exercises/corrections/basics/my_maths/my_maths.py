@@ -42,15 +42,20 @@ def fibonacci(n: int) -> int:
 
     # return l[k]
 
+    # if n == 0 or n == 1:
+    #     return n
+    
+    # l = [0, 1]
+
+    # for _ in range(2, n+1):
+    #     l.append(l[-2] + l[-1])
+
+    # return l[-1]
+
     if n == 0 or n == 1:
         return n
     
-    l = [0, 1]
-
-    for _ in range(2, n+1):
-        l.append(l[-2] + l[-1])
-
-    return l[-1]
+    return fibonacci(n-1) + fibonacci(n-2)
 
 
 def sum(n: int) -> int: # O(1); O(n); O(n^2); O(log n)
@@ -73,8 +78,6 @@ def square(n: int) -> int:
     :return: The square of n
     """
     return n*n
-
-
 
 def is_prime(n: int) -> bool:
     """
