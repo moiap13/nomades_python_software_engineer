@@ -25,14 +25,19 @@ import time
 from tqdm import tqdm
 
 def brute_force_password(charset, length, target_hash):
-    MAX_ITER = len(charset) ** length
     start_time = time.time()
 
-    # TODO: Implement the brute force algorithm
-    p = "aaaaa"
-    password = hashlib.sha256(p.encode()).hexdigest()
-
-    return password, time.time() - start_time
+    for i in charset:
+      for j in charset:
+        for k in charset:
+          for l in charset:
+            for m  in charset:
+              p = i+j+k+l+m
+              password = hashlib.sha256(p.encode()).hexdigest()
+              if password == target_hash:
+                return p, time.time() - start_time
+          
+    return False, time.time() - start_time
 
 # Example usage:
 charset = string.ascii_lowercase  # Define your character set
@@ -50,13 +55,13 @@ else:
 """
 Questions Part
 1. What is the time complexity of the brute force algorithm?
-
+The complexity is O(len(charset)**length) <==> O(n**m), where n is len(charset) and m is length of password
 
 2. What would be the time complexity if the password was 6 characters long instead of 5?
-
+O(26**6)
 
 3. What would be the value of MAX_ITER if the password contains uppercase letters, lowercase letters, digits and special characters?
-
+MAX_ITER = 95**5
 
 4. Imagine you have a computer that clock a 4GHZ (4 billion cycles per second). 
   Complete the table below with the time taken to break the password for different lengths of passwords.

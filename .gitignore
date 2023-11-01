@@ -6,6 +6,4 @@ exercises/
 __pycache__/
 
 # To Be deleted
-some_small_exercises/
-input_io/
 pygame/
