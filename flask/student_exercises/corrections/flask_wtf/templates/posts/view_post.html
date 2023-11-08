@@ -1,0 +1,15 @@
+{%extends 'includes/base.html'%}
+
+{%block title%}
+View Post ({{post.post_id}})
+{%endblock%}
+{%block content%}
+  <div class="row">
+    <div class="col-md-8">
+      <h1>{{post.title}}</h1>
+      <p class="lead">{{post.content}}</p>
+      <hr>
+      <p>Posted by {{post.uid}}</p>
+    </div>
+  </div>
+{%endblock%}
