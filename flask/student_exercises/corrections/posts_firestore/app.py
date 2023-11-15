@@ -8,9 +8,11 @@ from firebase_admin import credentials, firestore
 import hashlib
 import random
 import string
+import uuid
 
 CURR_DIR = os.path.dirname(__file__)
 DATA_DIR = os.path.join(CURR_DIR, "static/data")
+UPLOAD_DIR = os.path.join(CURR_DIR, "static/imgs/uploads")
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "secret"
@@ -86,6 +88,7 @@ def signup():
     }
 
     if db.collection(u"users").where("email", "==", email).count().get()[0][0].value > 0:
+    #if len(db.collection(u"users").where("email", "==", email).get()) > 0: # -> Equivalent to the above line
       return "Email already used"
 
     _, d = db.collection(u"users").add(user)
@@ -103,12 +106,18 @@ def logout():
 @app.route("/add_post", methods=["POST", "GET"])
 @authenticated
 def add_post():
-  add_post_form = AddPost(request.form)
+  add_post_form = AddPost()
 
   if request.method == "POST":
     title:str = add_post_form.title.data
     content:str = add_post_form.content.data
     categories:str = add_post_form.categories.data
+
+    image_extension:str = add_post_form.image.data.filename.split(".")[-1]
+    image_name:str = str(uuid.uuid4()) + "." + image_extension
+    image_path:str = os.path.join(UPLOAD_DIR, image_name)
+    add_post_form.image.data.save(image_path)
+
     author:str = db.collection(u"users").document(session["id"]).get().to_dict()["uid"]
     id_user:str = session["id"]
 
@@ -117,7 +126,8 @@ def add_post():
       "content": content,
       "categories": categories,
       "author": author,
-      "id_docuument_user": id_user
+      "id_docuument_user": id_user,
+      "image_name": image_name
     })
 
     return redirect(url_for("view_posts"))
@@ -141,9 +151,20 @@ def view_post(post_id):
   pd["post_id"] = post_id
   return render_template("posts/view_post.html", post=pd)
 
-
-
 # TODO: Perform the search on post using the attributes: title, content and categories in the firestore database
+@app.route("/search")
+def search():
+  search_form = SearchForm(request.form)
+  final_posts = []
+
+  if request.method == "POST" and search_form.validate():
+    keyword:str = search_form.search.data
+
+    cat_posts = db.collection(u"posts").where("categories", "")
+
+
+  return render_template("search/search.html", form=search_form, posts=final_posts)
+
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0", port="8080", debug=True)

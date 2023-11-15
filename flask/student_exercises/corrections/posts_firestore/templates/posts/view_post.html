@@ -7,6 +7,8 @@ View Post ({{post.post_id}})
   <div class="row">
     <div class="col-md-8">
       <h1>{{post.title}}</h1>
+      <hr>
+      <img src="{{ url_for('static', filename='imgs/uploads/' + post.image_name) }}" class="img-fluid" alt="Responsive image">
       <p class="lead">{{post.content}}</p>
       <ul>
         {% for cat in post.categories %}

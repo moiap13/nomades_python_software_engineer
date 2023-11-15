@@ -7,10 +7,11 @@ Add New Post
 {% from "includes/form_helpers.html" import createInput %}
   <div class="row">
     <div class="col-md-8">
-      <form action="{{ url_for('add_post') }}" method="POST">
+      <form action="{{ url_for('add_post') }}" method="POST" enctype="multipart/form-data">
         {{ createInput(form.title) }}
         {{ createInput(form.content) }}
         {{ createInput(form.categories) }}
+        {{ createInput(form.image) }}
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>

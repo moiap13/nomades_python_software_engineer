@@ -2,6 +2,7 @@ from wtforms import Form, validators, StringField, PasswordField, EmailField, In
 
 def get_categories_from_csv() -> list[tuple[str, str]]:
   import os
+  import csv
 
   CURR_DIR = os.path.dirname(os.path.abspath(__file__))
   DATA_DIR = os.path.join(CURR_DIR, "static/data")
@@ -28,3 +29,6 @@ class SignUp(Form):
 
 class AddPost(Form):
   categories = SelectMultipleField("Categories", choices=get_categories_from_csv(), validators=[validators.input_required()])
+
+class SearchForm(Form):
+  pass

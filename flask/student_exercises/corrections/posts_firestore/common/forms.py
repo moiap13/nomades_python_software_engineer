@@ -1,4 +1,5 @@
-from wtforms import Form, validators, StringField, PasswordField, EmailField, IntegerField, SelectMultipleField, TextAreaField
+from flask_wtf import FlaskForm
+from wtforms import Form, validators, StringField, PasswordField, EmailField, IntegerField, SelectMultipleField, TextAreaField, FileField
 
 def get_categories_from_csv() -> list[tuple[str, str]]:
   import os
@@ -27,10 +28,11 @@ class SignUp(Form):
   password = PasswordField('Password', [validators.data_required(), validators.equal_to('confirm',message='PASSWORDS DONT MATCH')])
   confirm = PasswordField('Confirm password')
 
-class AddPost(Form):
+class AddPost(FlaskForm):
   title = StringField("Post title", validators=[validators.input_required()])
   content = TextAreaField("Content", validators=[validators.input_required()])
   categories = SelectMultipleField("Categories", choices=get_categories_from_csv(), validators=[validators.input_required()])
+  image = FileField("Image", validators=[validators.input_required()])
 
 class SearchForm(Form):
-  pass
+  search = StringField("Search", validators=[validators.input_required()])
