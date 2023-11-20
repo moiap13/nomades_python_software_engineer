@@ -1,3 +1,0 @@
-This is a test file.
-Hello from the test file.
-Hello from the course
