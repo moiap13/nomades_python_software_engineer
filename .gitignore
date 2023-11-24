@@ -11,6 +11,3 @@ Flask_old/
 *cred.json
 
 # To Be deleted
-numpy_pandas/examples/data_aquisition/REST_API
-numpy_pandas/examples/data_aquisition/web_scrapping/basic
-numpy_pandas/student_exercises/data_aquisition/web_scrapping/Selenium
