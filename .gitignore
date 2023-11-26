@@ -1,0 +1,35 @@
+.idea
+.DS_Store
+.ipynb_checkpoints
+
+exercises/
+__pycache__/
+
+Flask_old/
+
+# firestore credential
+*cred.json
+
+# To Be deleted
+python/exemples/
+
+python/student_exercises/implementations/basic_input_output/
+python/student_exercises/implementations/bruteforce/
+python/student_exercises/implementations/guess_number/
+python/student_exercises/implementations/input_io/
+python/student_exercises/implementations/pygame/
+python/student_exercises/implementations/random_password_generator/
+python/student_exercises/implementations/some_small_exercises/
+
+python/student_exercises/corrections/
+python/student_exercises/corrections/basic_input_output/
+python/student_exercises/corrections/basics/
+python/student_exercises/corrections/bruteforce/
+python/student_exercises/corrections/guess_number/
+python/student_exercises/corrections/input_io/
+python/student_exercises/corrections/pygame/
+python/student_exercises/corrections/random_password_generator/
+python/student_exercises/corrections/some_small_exercises/
+
+numpy_pandas/
+flask/
