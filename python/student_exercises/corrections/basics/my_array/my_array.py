@@ -1,4 +1,21 @@
-def sum(tableau: list[int]) -> int:
+def tri_croissant(arr: list[int]) -> list[int]:
+    """
+    Function that returns the sorted array in ascending order 
+    :param arr: the array to sort
+    :return: the sorted array in ascending order
+    """
+    return None
+
+
+def tri_decroissant(arr: list[int]) -> list[int]:
+    """
+    Function that returns the sorted array in descending order 
+    :param arr: the array to sort
+    :return: the sorted array in descending order
+    """
+    return None
+
+def somme(tableau: list[int]) -> int:
     """
     Function that returns the sum of the elements of the array
     :param tableau: the array to sum
@@ -7,7 +24,7 @@ def sum(tableau: list[int]) -> int:
     return None
 
 
-def average(tableau: list[int]) -> float:
+def moyenne(tableau: list[int]) -> float:
     """
     Function that returns the average of the elements of the array
     :param tableau: the array to average
@@ -43,6 +60,15 @@ def min_max(tableau: list[int]) -> tuple[int, int]:
     return None
 
 
+def mediane(tableau: list[int]) -> int:
+    """
+    Function that returns the median of the elements of the array
+    :param tableau: the array to find the median of
+    :return: the median of the elements of the array
+    """
+    return None
+
+
 def mode(tableau: list[int]) -> int:
     """
     Function that returns the mode of the elements of the array
@@ -61,8 +87,10 @@ def variance(tableau: list[int]) -> float:
     """
     return None
 
+        
+    
 
-def standard_deviation(tableau: list[int]) -> float:
+def ecart_type(tableau: list[int]) -> float:
     """
     Function that returns the standard deviation of the elements of the array
     The standard deviation is the square root of the variance.
@@ -72,7 +100,7 @@ def standard_deviation(tableau: list[int]) -> float:
     return None
 
 
-def exist(tableau: list[int], valeur: int) -> bool:
+def existe(tableau: list[int], valeur: int) -> bool:
     """
     Function that returns True if the value exists in the array
     :param tableau: the array to check if the value exists in
@@ -93,7 +121,7 @@ def position(tableau: list[int], valeur: int) -> int:
     return None
 
 
-def similars(arr1: list[int], arr2: list[int]) -> bool:
+def similaires(arr1: list[int], arr2: list[int]) -> bool:
     """
     Function that returns True if the two arrays are similar
     :param arr1: the first array
@@ -103,7 +131,7 @@ def similars(arr1: list[int], arr2: list[int]) -> bool:
     return None
 
 
-def is_list(tableau) -> bool:
+def est_tableau(tableau) -> bool:
     """
     Function that returns True if the array is a table
     :param tableau: the array to check if it is a table
@@ -112,35 +140,10 @@ def is_list(tableau) -> bool:
     return None
 
 
-def is_list_of_numbers(tableau) -> bool:
+def est_tableau_de_nombres(tableau) -> bool:
     """
     Function that returns True if the array is a table of numbers
     :param tableau: the array to check if it is a table of numbers
     :return: True if the array is a table of numbers, False otherwise
-    """
-    return None
-
-def sort_ascending(arr: list[int]) -> list[int]:
-    """
-    Function that returns the sorted array in ascending order 
-    :param arr: the array to sort
-    :return: the sorted array in ascending order
-    """
-    return None
-
-
-def sort_descending(arr: list[int]) -> list[int]:
-    """
-    Function that returns the sorted array in descending order 
-    :param arr: the array to sort
-    :return: the sorted array in descending order
-    """
-    return None
-
-def median(tableau: list[int]) -> int:
-    """
-    Function that returns the median of the elements of the array
-    :param tableau: the array to find the median of
-    :return: the median of the elements of the array
     """
     return None
