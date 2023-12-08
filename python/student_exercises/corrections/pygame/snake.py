@@ -167,7 +167,8 @@ class Snake:
             Point(WIDTH, HEIGHT, head.x-2*BLOCK_SIZE, head.y)
           ]
         # TODO: Initialize the direction of the snake with a random direction. (UP, DOWN, RIGHT)
-        self._current_direction: str = random.choice([UP, DOWN, RIGHT])
+        directions = [UP, DOWN, RIGHT]
+        self._current_direction: str = random.choice(directions)
     
     def move(self) -> None:
         """

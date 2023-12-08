@@ -5,7 +5,8 @@ def generate_numbers():
     Returns:
         list: List of numbers from 1 to 10.
     """
-    return None
+    return [i+1 for i in range(10)]
+    return [i for i in range(1, 11)]
 
 # Example: generate_numbers() -> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -17,7 +18,7 @@ def generate_squares():
     Returns:
         list: List of squares of numbers from 1 to 10.
     """
-    return None
+    return [i*i for i in range(1, 11)]
 
 # Example: generate_squares() -> [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
