@@ -197,11 +197,20 @@ class Snake:
                   - LEFT you must decrease the x position of the head of the snake.
         """
         head_copy:Point = self.body[0].copy() # don't change this line, it's used to copy the head of the snake.
-
         # TODO: Update the position of the head of the snake according to the current direction.
-        # TODO: Add the new segment at the head of the snake.
-        # TODO: Remove the last segment of the snake.
-        pass
+        if self._current_direction == UP:
+            head_copy.y -= BLOCK_SIZE
+        elif self._current_direction == DOWN:
+            head_copy.y += BLOCK_SIZE
+        elif self._current_direction == LEFT:
+            head_copy.x -= BLOCK_SIZE
+        elif self._current_direction == RIGHT:
+            head_copy.x += BLOCK_SIZE
+            
+        self.body.insert(0, head_copy)
+        self.body.pop()
+
+        #self.body = [head_copy] + self.body[:-1]
     
     def change_direction(self, direction: str) -> None:
         """
@@ -214,7 +223,12 @@ class Snake:
         Args:
             direction (str): The new direction of the snake.
         """
-        pass
+        if (direction == UP and self._current_direction != DOWN) \
+          or (direction == DOWN and self._current_direction != UP) \
+          or (direction == LEFT and self._current_direction != RIGHT) \
+          or (direction == RIGHT and self._current_direction != LEFT):
+            self._current_direction = direction
+          
     
     def grow(self) -> None:
         """
@@ -225,7 +239,7 @@ class Snake:
         - The function should add a new segment at the end of the snake.
         """
         # TODO: Add a new segment at the end of the snake.
-        pass
+        self.body.append(self.body[-1])
 
     def check_border_collision(self) -> bool:
         """
@@ -237,7 +251,8 @@ class Snake:
         Returns:
             bool: True if the snake hits the border of the screen, False otherwise.
         """
-        return False
+        head: Point = self.body[0]
+        return head.x < 0 or head.x >= WIDTH or head.y < 0 or head.y >= HEIGHT
 
     def check_self_collision(self) -> bool:
         """
@@ -248,7 +263,7 @@ class Snake:
         Returns:
             bool: True if the snake hits itself, False otherwise.
         """
-        return False
+        return self.body[0] in self.body[1:]
     
         
     
@@ -264,7 +279,7 @@ class Snake:
         Returns:
             bool: True if the snake hits the food, False otherwise.
         """
-        return False
+        return self.body[0] == item.position
     
     def check_game_over(self) -> bool:
         """
@@ -274,7 +289,7 @@ class Snake:
         Returns:
             bool: True if the game is over, False otherwise.
         """
-        return False
+        return self.check_border_collision() or self.check_self_collision()
     
     def draw(self) -> None:
         for segment in self.body:
@@ -282,7 +297,9 @@ class Snake:
 
 # Create instances of Snake and Food - Global variables
 snake = Snake()
-food = Food(snake)
+snake2 = Snake()
+
+foods = [Food(snake) for _ in range(50)]
 
 # Helpers functions
 def press_space_to_start(font):
@@ -298,10 +315,9 @@ def press_space_to_start(font):
       clock.tick(30)  # 30 FPS
       for event in pygame.event.get():
           if event.type == pygame.QUIT:
-              return False
-          elif event.type == pygame.KEYDOWN:
-              if event.key == pygame.K_SPACE:
-                  return True
+            return False
+          elif event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+            return True
 
 def display_score(font, score):
     score_text = font.render(f"Score: {score}", True, WHITE, None)
@@ -329,13 +345,21 @@ def snake_game():
               running = False
           elif event.type == pygame.KEYDOWN and update_direction:
               if event.key == pygame.K_UP:
-                  snake.change_direction("UP")
+                  snake.change_direction(UP)
               elif event.key == pygame.K_DOWN:
-                  snake.change_direction("DOWN")
+                  snake.change_direction(DOWN)
               elif event.key == pygame.K_LEFT:
-                  snake.change_direction("LEFT")
+                  snake.change_direction(LEFT)
               elif event.key == pygame.K_RIGHT:
-                  snake.change_direction("RIGHT")
+                  snake.change_direction(RIGHT)
+              if event.key == pygame.K_w:
+                  snake2.change_direction("UP")
+              elif event.key == pygame.K_s:
+                  snake2.change_direction("DOWN")
+              elif event.key == pygame.K_a:
+                  snake2.change_direction("LEFT")
+              elif event.key == pygame.K_d:
+                  snake2.change_direction("RIGHT")
               
               update_direction = False
       # ================= END EVENT PART =================
@@ -343,12 +367,15 @@ def snake_game():
       # ================= LOGIC PART =================
       # Move the snake
       snake.move()
+      # snake2.move()
 
       #Check for food collision
-      if (snake.check_collision(food)):
-        snake.grow()
-        food.create_new_food_item(snake)
-        score += 1
+      for food in foods:
+        if (snake.check_collision(food)):
+          snake.grow()
+          food.create_new_food_item(snake)
+          score += 1
+          break
 
 
       #Check for game over
@@ -361,7 +388,10 @@ def snake_game():
       screen.fill(BLACK)
       #Draw snake and food
       snake.draw()
-      food.draw()
+      # snake2.draw()
+      # food.draw()
+      for food in foods:
+          food.draw()
       
       display_score(font, score)
 
