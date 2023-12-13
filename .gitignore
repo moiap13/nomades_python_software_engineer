@@ -19,6 +19,7 @@ python/student_exercises/corrections/some_small_exercises/pyramid.py
 
 numpy_pandas/
 flask/example/
-flask/student_exercises/corrections/
+flask/student_exercises/corrections/flask_wtf/
+flask/student_exercises/corrections/posts_firestore/
 flask/student_exercises/implementations/posts_csv/
 flask/student_exercises/implementations/posts_firestore/
