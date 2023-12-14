@@ -1,0 +1,16 @@
+{% extends 'includes/_base.html' %}
+
+{% block title %}
+Example for for statement
+{% endblock %}
+
+{% block content %}
+<h1>Welcome to Flask</h1>
+
+    <ol>
+      {% for fruit in fruits %}
+        <li><a href="google.com">{{ fruit }}</a></li>
+      {% endfor %}
+    </ol>
+{% endblock %}
+

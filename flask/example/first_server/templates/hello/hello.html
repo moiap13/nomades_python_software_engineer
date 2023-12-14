@@ -1,0 +1,24 @@
+{%extends 'includes/base.html'%}
+
+{%block title%}
+Hello
+{%endblock%}
+{%block content%}
+    <h1>Hello 
+      <span style="color: red;">{{ parameter.name | capitalize }}</span> 
+      
+      {% if parameter.b %} 
+      <span style="color: purple;">{{ parameter["nameMaj"] }}</span>
+      {% else %}
+      <span style="color: blue;">{{ parameter["nameMaj"] }}</span>
+      {% endif %}
+    </h1>
+
+    {{ parameter.html | safe }}
+
+    <ul>
+      {% for fruit in parameter.fruits %}
+      <li>{{ fruit }}</li>
+      {% endfor %}
+    </ul>
+{%endblock%}
