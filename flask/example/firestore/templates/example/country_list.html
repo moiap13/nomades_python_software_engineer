@@ -1,0 +1,27 @@
+{%extends 'includes/base.html'%}
+
+{%block title%}
+Index
+{%endblock%}
+{%block content%}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Population</th>
+      <th scope="col">Capital</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for k, v in countries.items() %}
+      <tr>
+        <th scope="row">{{ k }}</th>
+        <td>{{ v.name }}</td>
+        <td>{{ v.population }}</td>
+        <td>{{ v.capital }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{%endblock%}

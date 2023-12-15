@@ -120,6 +120,17 @@ def get_user_tricky():
   ret = [{d.id: d.to_dict()} for d in stream]
   return jsonify(ret)
 
+# QUERY PART
+@app.route("/simple_query")
+def simple_query():
+  # Note: Use of CollectionRef stream() is prefered to get()
+  docs = (db.collection("cities").where("population", "<", 1000000).stream())
+  d = {}
+  for doc in docs:
+      d[doc.id] = doc.to_dict()
+  
+  return render_template("example/country_list.html", countries=d)
+
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0", port="8080", debug=True)
