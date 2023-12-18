@@ -17,7 +17,14 @@ python/student_exercises/implementations/some_small_exercises/pyramid.py
 
 python/student_exercises/corrections/some_small_exercises/pyramid.py
 
-numpy_pandas/
+numpy_pandas/examples/
+numpy_pandas/student_exercises/corrections/
+numpy_pandas/student_exercises/implementations/ML/
+numpy_pandas/student_exercises/implementations/pandas/
+numpy_pandas/student_exercises/implementations/data_aquisition/REST_API/
+numpy_pandas/student_exercises/implementations/data_aquisition/web_scrapping/IMDB/
+numpy_pandas/student_exercises/implementations/data_aquisition/web_scrapping/Selenium/
+
 flask/example/firts_server/
 flask/student_exercises/corrections/flask_wtf/
 flask/student_exercises/corrections/posts_firestore/
