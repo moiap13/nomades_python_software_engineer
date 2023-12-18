@@ -17,7 +17,11 @@ python/student_exercises/implementations/some_small_exercises/pyramid.py
 
 python/student_exercises/corrections/some_small_exercises/pyramid.py
 
-numpy_pandas/examples/
+numpy_pandas/examples/data_aquisition/REST_API/
+numpy_pandas/examples/data_aquisition/web_scrapping/basic/
+numpy_pandas/examples/data_visualization/
+numpy_pandas/examples/ML/
+
 numpy_pandas/student_exercises/corrections/
 numpy_pandas/student_exercises/implementations/ML/
 numpy_pandas/student_exercises/implementations/pandas/
