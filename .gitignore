@@ -24,8 +24,9 @@ numpy_pandas/examples/ML/
 
 numpy_pandas/student_exercises/corrections/
 numpy_pandas/student_exercises/implementations/ML/
-numpy_pandas/student_exercises/implementations/pandas/
-numpy_pandas/student_exercises/implementations/data_aquisition/REST_API/
+numpy_pandas/student_exercises/implementations/pandas/lecture_exercises/learntools/
+numpy_pandas/student_exercises/implementations/pandas/titanic/
+
 numpy_pandas/student_exercises/implementations/data_aquisition/web_scrapping/IMDB/
 numpy_pandas/student_exercises/implementations/data_aquisition/web_scrapping/Selenium/
 
