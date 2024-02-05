@@ -30,7 +30,7 @@ def fibonacci(n: int) -> int:
     return None
 
 
-def sum(n: int) -> int: # O(1); O(n); O(n^2); O(log n)
+def sum(n: int) -> int:
     """
     Function that computes the sum of all integers from 0 to n.
     :param n: The number to compute the sum up to
