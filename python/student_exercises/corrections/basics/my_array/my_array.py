@@ -64,13 +64,13 @@ def max(tableau: list[int]) -> int:
         
 
 
-def min_max(tableau: list[int]) -> tuple[int, int]:
+def min_max(tableau: list[int]) -> list[int, int]:
     """
     Function that returns the minimum and maximum of the elements of the array
     :param tableau: the array to find the minimum and maximum of
     :return: the minimum and maximum of the elements of the array
     """
-    return None
+    return [min(tableau), max(tableau)]
 
 
 def mode(tableau: list[int]) -> int:
@@ -81,15 +81,44 @@ def mode(tableau: list[int]) -> int:
     :param tableau: the array to find the mode of
     :return: the mode of the elements of the array
     """
-    return None
+    # counter = 0
+    # mode = [0]
+    # new_tab = sorted(tableau)
 
-def variance(tableau: list[int]) -> float:
+    # for curr_elem in (new_tab):
+    #     curr_freq = new_tab.count[curr_elem]
+    #     if curr_freq > counter:
+    #         counter = curr_freq
+    #         mode = curr_elem
+    # return mode 
+    occurences = {}
+    for item in tableau:
+      if item not in occurences:
+        occurences[item] = 0
+      occurences[item] += 1
+    
+    max_occurences: int = max(list(occurences.values()))
+    mode = []
+    for k, v in occurences.items():
+      if v == max_occurences:
+        mode.append(k)
+    
+    return min(mode)
+        
+def variance(tableau: list[int]) -> float: # O(n) | O(n^2)
     """
     Function that returns the variance of the elements of the array
     :param tableau: the array to find the variance of
     :return: the variance of the elements of the array
     """
-    return None
+    # avg = average(tableau)
+    # v = 0                                     
+    # for curr_elem in tableau:                 
+    #    v += (curr_elem-avg)**2 
+    # return v/len(tableau)
+    from functools import reduce
+    avg = average(tableau)
+    return reduce(lambda a, b: a + (b-avg)**2, tableau, 0)/len(tableau)
 
 def standard_deviation(tableau: list[int]) -> float:
     """
@@ -98,8 +127,7 @@ def standard_deviation(tableau: list[int]) -> float:
     :param tableau: the array to find the standard deviation of
     :return: the standard deviation of the elements of the array
     """
-    return None
-
+    return variance(tableau)**(1/2)
 
 def exist(tableau: list[int], valeur: int) -> bool:
     """
@@ -137,7 +165,12 @@ def similars(arr1: list[int], arr2: list[int]) -> bool:
     :param arr2: the second array
     :return: True if the two arrays are similar, False otherwise
     """
-    return None
+    if len(arr1) != len(arr2): return False
+
+    for i in range(len(arr1)):
+      if arr1[i] != arr2[i]:
+        return False
+    return True
 
 
 def is_list(tableau) -> bool:
@@ -146,7 +179,7 @@ def is_list(tableau) -> bool:
     :param tableau: the array to check if it is a table
     :return: True if the array is a table, False otherwise
     """
-    return None
+    return type(tableau) is list
 
 
 def is_list_of_numbers(tableau) -> bool:
@@ -155,15 +188,25 @@ def is_list_of_numbers(tableau) -> bool:
     :param tableau: the array to check if it is a table of numbers
     :return: True if the array is a table of numbers, False otherwise
     """
-    return None
+    if not is_list(tableau): return False
+    if len(tableau) == 0: return False
 
-def sort_ascending(arr: list[int]) -> list[int]:
+    for i in tableau:
+      if type(i) != int:
+        return False
+    return True
+
+def sort_ascending(arr: list[int]) -> list[int]: # O(n^2) | O(n*log(n))
     """
     Function that returns the sorted array in ascending order 
     :param arr: the array to sort
     :return: the sorted array in ascending order
     """
-    return None
+    for i in range(len(arr)):             # O(n)
+      for j in range(i+1, len(arr)):      # O(n*n)
+        if arr[i] >= arr[j]:
+          arr[j], arr[i] = arr[i], arr[j]
+    return arr
 
 
 def sort_descending(arr: list[int]) -> list[int]:
@@ -172,7 +215,11 @@ def sort_descending(arr: list[int]) -> list[int]:
     :param arr: the array to sort
     :return: the sorted array in descending order
     """
-    return None
+    for i in range(len(arr)):             # O(n)
+      for j in range(i+1, len(arr)):      # O(n*n)
+        if arr[i] <= arr[j]:
+          arr[j], arr[i] = arr[i], arr[j]
+    return arr
 
 def median(tableau: list[int]) -> int:
     """
@@ -180,4 +227,5 @@ def median(tableau: list[int]) -> int:
     :param tableau: the array to find the median of
     :return: the median of the elements of the array
     """
-    return None
+    tableau = sort_ascending(tableau)
+    return tableau[len(tableau)//2] if len(tableau)%2==1 else (tableau[len(tableau)//2]+tableau[len(tableau)//2-1])/2
