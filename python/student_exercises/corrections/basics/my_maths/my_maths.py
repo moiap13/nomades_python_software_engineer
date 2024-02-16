@@ -48,10 +48,14 @@ def fibonacci(n: int) -> int:
     :param n: The index of the Fibonacci number to compute
     :return: The nth Fibonacci number
     """
-    print(x)
-    return x
+    # fib = [0, 1]
+    # for _ in range(n-1):
+    #     fib.append(fib[-1]+fib[-2])
+    # return fib[-1]
+    if n == 0 or n == 1:
+        return n
+    return fibonacci(n-1)+fibonacci(n-2)
 
-print(x)
 
 def sum(n: int) -> int: # O(n) / O(n^2) / O(1) / O(n*log(n)) / O(sqrt(n))
     """

@@ -1,2 +1,2 @@
-Programming is Fun. Written from Python.
-Written from Python 2.
+ProgProgramming is Fun. Written from Python.
+Written from Python 3.10.
