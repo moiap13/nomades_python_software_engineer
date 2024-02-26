@@ -22,9 +22,14 @@ python/student_exercises/corrections/basics/my_lists_comprehensions/
 python/student_exercises/corrections/basics/my_sets/
 python/student_exercises/corrections/basics/my_strings/
 python/student_exercises/corrections/basics/my_tuples/
-python/student_exercises/corrections/pygame/
 
-numpy_pandas/
+numpy_pandas/example/
+numpy_pandas/student_exercises/corrections/
+numpy_pandas/student_exercises/implementations/data_aquisition/REST_API/
+numpy_pandas/student_exercises/implementations/data_aquisition/web_scrapping/IMDB/
+numpy_pandas/student_exercises/implementations/numpy/
+numpy_pandas/student_exercises/implementations/pandas/
+
 flask/
 
 cours/jupyter/
