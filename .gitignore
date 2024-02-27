@@ -10,6 +10,8 @@ Flask_old/
 # firestore credential
 *cred.json
 
+cours/jupyter/
+
 # To Be deleted
 python/exemples/
 
@@ -30,10 +32,9 @@ numpy_pandas/student_exercises/corrections/data_aquisition/REST_API/
 numpy_pandas/student_exercises/corrections/data_aquisition/web_scrapping/IMDB/
 numpy_pandas/student_exercises/corrections/data_aquisition/web_scrapping/Selenium/
 
-numpy_pandas/student_exercises/implementations/data_aquisition/REST_API/
 numpy_pandas/student_exercises/implementations/data_aquisition/web_scrapping/IMDB/
 numpy_pandas/student_exercises/implementations/numpy/
-numpy_pandas/student_exercises/implementations/pandas/
+numpy_pandas/student_exercises/implementations/pandas/titanic/
 
 flask/
 
