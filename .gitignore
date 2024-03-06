@@ -32,7 +32,9 @@ numpy_pandas/student_exercises/corrections/data_aquisition/web_scrapping/Seleniu
 
 numpy_pandas/student_exercises/implementations/data_aquisition/web_scrapping/IMDB/
 
-flask/example/
+flask/example/firestore/
+flask/example/forms/
+flask/example/wtforms/
 flask/rest_api/
 flask/student_exercises/corrections/
 flask/student_exercises/implementations/flask_login_firestore/
