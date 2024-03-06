@@ -18,8 +18,11 @@ def register():
   
   return render_template("register.html")
 
-@app.route("/userinfo")
+@app.route("/user/info")
 def userinfo():
+  # TODO: protect user info page
+  # only logged in persons can acces to this route
+  # use session to keep in memory if logged and values
   email = session["email"]
   password = session["password"]
   uid = session["uid"]
@@ -31,6 +34,10 @@ def userinfo():
 #  1. get the data from form
 #  2. read the csv file and check if email/password match
 #  3. if there is a match redirect to userinfo
+
+#TODO: create logout page
+# logout should destroy the session
+# redirect to Login
 
 if __name__ == "__main__":
   app.run(debug=True)
