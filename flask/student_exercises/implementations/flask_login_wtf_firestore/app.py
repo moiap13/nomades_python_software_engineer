@@ -6,6 +6,15 @@ import hashlib
 import string
 import random
 
+# to install firebase_admin run (inside nomades_flask_310 env): pip isntall firebase_admin
+import firebase_admin
+from firebase_admin import credentials, firestore
+
+cred = credentials.Certificate("key_cred.json")
+firebase_admin.initialize_app(cred)
+db = firestore.client()
+print(db)
+
 app = Flask(__name__)
 app.secret_key = "secret"
 
@@ -24,7 +33,7 @@ def register():
     # create new documents in the users collection (add() or set())
     # a user should have: email, password
     # feel free to add new data for the new registered user such as: firstname, lastname, etc...
-    
+
     email: str = request.form["tbxEmail"]
     pwd: str = request.form["tbxPwd"]
     # salt: str = "".join(random.sample(all_chars, 10))
