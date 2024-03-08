@@ -1,0 +1,14 @@
+{% macro showInput(field, showErrors="true") %}
+  <div class="form-group">
+    {{ field.label }}
+    {{ field(class="form-control", **kwargs)}}
+    
+    {% if showErrors=="true" and field.errors %}
+      <div class="alert alert-danger">
+        {% for error in field.errors %}
+          <span class="help-inline">{{ error }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+{% endmacro %}

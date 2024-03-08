@@ -1,0 +1,31 @@
+{% extends 'includes/base.html' %}
+
+{% block title %}
+  Register
+{% endblock %}
+
+{% block content%}
+  <h1>Register</h1>
+  <form method="POST" action="{{url_for('register')}}">
+    <label for="id_tbx_fn">Firstname : </label>
+    <input type="text" id="id_tbx_fn" name="tbx_fn" placeholder="Firstname"/>
+    <br/>
+    <label for="id_tbx_ln">Lastname : </label>
+    <input type="text" id="id_tbx_ln" name="tbx_ln" placeholder="Lastname"/>
+    <br/>
+    <label for="id_tbx_mail">Email : </label>
+    <input type="email" id="id_tbx_mail" name="tbx_mail" placeholder="E-mail"/>
+    <br/>
+    <label for="id_tbx_uid">User Id : </label>
+    <input type="text" id="id_tbx_uid" name="tbx_uid" placeholder="user id" minlength="3" maxlength="5"/>
+    <span>{{uid_error}}</span>
+    <br/>
+    <label for="id_tbx_pwd">Password </label>
+    <input type="password" id="id_tby_pwd" name="tbx_pwd" placeholder="password" />
+    <br/>
+    <label for="id_tbx_pwd_confirm">Password </label>
+    <input type="password" id="id_tby_pwd_confirm" name="tbx_pwd_confirm" placeholder="confirm password" />
+    <br/>
+    <input type="submit" value="Register" />
+  </form>
+{% endblock %}

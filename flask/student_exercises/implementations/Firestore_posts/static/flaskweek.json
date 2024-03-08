@@ -1,0 +1,14 @@
+{
+  "type": "service_account",
+  "project_id": "flaskwebweek",
+  "private_key_id": "f756ab8d7377fec8779c35dd1cbaf8b785ed89b3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC3GUmWd6CNAVgK\nyrIYy9M0OdzJxhe45qbzEwOsKd5rbB1mFIavd1JjR6ij2fC1+P9skCzFtU8nNkLc\nYBPbUHJWzdCNIJXmg6+On9BhkmmujoaOZzwgRxZ6wZqD/VstaVczLdQFHdaqirT9\nLX7mnnv+znO8XJrxLihP+RRkIlVhlCEvnkEchP6+eDpMnXUgkNxjvsDf0LC0dWkq\ntLPPIebGssoRSOL6uN+EzI2Fk5e/n1uQAPiph+GmDvYiKA+0qIZae0uGJBWUKq/p\nPoxpBYyz8HFBMicWUO/5Yo8reRFR1upv9SDdZn9VQy7ZTk6w2r3FCgNVKdrFir52\ncflD9Mo3AgMBAAECggEAQRpiMnilow1rxyaMTcnHdqXuTeY8EBgfG4XSw/f9KFgA\nWggJXcGBD2Du4xe+gY2gEHNxH/lYRBqEioQ0+0Gu7hNvSIbiFd0T4pQLjW34WsM9\nr8ugMt/j69EEBlNjBJIUmdN9NDaIWgpI0U7IdOq8Lv0sZLjOtNvTJKBtci9NCYz+\nOUKMKkGZIRyCyRHbdyZ1BUuL0TBJ6+pB3MJQYyddmaEgzeayCXpdybYu1JFplhRW\nUa3vjgCqBIBWJEUl3LQ+W7erIzy2FODT0Nq+F2bz85006l42NYwiQH9qGxghO0DO\nSSkch+c2hHyT6kKy3sHpygIfoMPvhvVgttINLGm6oQKBgQDm7vPTIFoDgxbxJbKG\n5uUY3Uh8UabgzWQpCAtScICmD9P2ngPERys+joZTI/bwQaEHhvQET1r1cbDMch55\n9Dq0hCEF1p/uxXScii02jjwghc9exKx4HXAI98IeIDYMbcAnpC6qLdAotU4MsSSH\n18eDHdxEkIbTG7iFqISa5GVslwKBgQDK+SId6R7xKTllnDfz4KF2auiTSJUqYtgV\nBVf9RuzIq8RAb59nMhtd03c2w6A5FsgGngGZE4GH3NPydGLVVZ9ZYHkfUXeaJd6G\nFxCwEztre1poVGwO08OkvNjuH9dkRxluGaffA4XPlsF6hMSZqcnafQmdzO4266qf\nA/Vr4YIjYQKBgG1Q6cykQNfuwvpuHN9tBz/I6BopULSTpXki3LEunkd9sJnKXQAZ\nrGfVcdKDcM50UrTMdlBf/C+5nLZ6wuB58xwme7dWzKhrgfLkGdj8ZYwDq5Exym6l\niLZGCfbWyp8BiPd66bgXLbVHdeXeKOvBAimYBf/S5m+ibKughP0JZtWLAoGBAKWv\n/VOhSyrd1gbGIT6pbeR2nOgt5eY1zeJK/Gq6jOu6m3dmJx9cXc6XosdHpfE0UZBl\nRzSoIaLAdxuCOnOfc3bIM9eG7zUcGKwpA+xXpre0eDaWQ6dO4nQF3Kd1wqQPDgk8\nVDbOb1rn24SiAMLXQPlj/IeeFA8tDZjE6IBqE4vBAoGAQ5gxzzlKPHmfgQzvdUvH\nvvwrhvYQk0xGP8bdv59G6pIOj3f3mbCHfeBY6bMfmBkczaRvbZ++3NuKp7GkttvU\ncD5NiF3ULYMv2EFf+WbaUAQ6ijL7QdMbwGRXcYKI09SDetgr4QKsYVZeRlBv6MMX\npWKLXuNrHzv2nDd4MeFkAoc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-febge@flaskwebweek.iam.gserviceaccount.com",
+  "client_id": "102662209230076464338",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-febge%40flaskwebweek.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
+

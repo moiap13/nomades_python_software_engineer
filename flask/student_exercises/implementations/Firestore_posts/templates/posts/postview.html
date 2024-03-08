@@ -1,0 +1,10 @@
+{% extends 'includes/base.html' %}
+
+{% block content %}
+    <h1>{{post.titre}}</h1>
+    <small>Written by {{post.uid}}</small>
+    <hr>
+    <div>
+    {{post.corps | safe}}
+    </div>
+{% endblock %}

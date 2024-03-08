@@ -1,0 +1,17 @@
+{% extends 'includes/base.html' %}
+
+{% block title %}
+  Index
+{% endblock %}
+
+{% block meta_header %}
+  <meta author="julien@gmail.com">
+{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.style.css') }}">
+{% endblock %}
+
+{% block content%}
+  <h1>Welcome</h1>
+{% endblock %}
