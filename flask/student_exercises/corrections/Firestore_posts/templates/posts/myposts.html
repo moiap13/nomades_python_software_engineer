@@ -1,0 +1,40 @@
+{%extends 'includes/base.html'%}
+
+{%block content%}
+<h1>Bienvenue {{session['username']}}</h1>
+<h2>Vous trouverrez ici vos articles!</h2>
+<a class="btn btn-success" href='{{url_for("post")}}'>Add article</a>
+<body>
+
+    <table class="table table-striped">
+        <tr>
+          <th>Titre</th>
+          <th>Corps</th>
+          <th></th>
+          <th></th>
+        </tr>
+        {% for post in posts %}
+          <tr>
+            <td>{{posts[post].titre}}</td>
+            <td>{{posts[post].corps}}</td>
+            <td>
+              <form action="{{url_for('delete_post', id=post)}}" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="Delete" class="btn btn-danger">
+              </form>
+            </td>
+            <td>
+              <a href="{{url_for('postview', id=post)}}">Voir le post</a>
+            </td>
+
+          </tr>
+         
+        {% endfor %}
+      </table>
+
+
+    <!-- {% for project in articles %}
+    <li>{{ articles[project].body }}</li>
+  {% endfor %} -->
+</body>
+{%endblock%}

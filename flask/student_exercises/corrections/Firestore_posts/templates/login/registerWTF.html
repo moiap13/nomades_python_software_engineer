@@ -1,0 +1,29 @@
+{% extends 'includes/base.html' %}
+
+{% block title %}
+  Register
+{% endblock %}
+
+{% block content%}
+  {% from "includes/_form_helpers.html" import showInput %}
+  <h1>Register</h1>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class=flashes>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  <form method="POST" action="{{url_for('register')}}">
+    {{ showInput(form.firstname, placeholder="Firstname") }}
+    {{ showInput(form.lastname, placeholder="Lastname") }}
+    {{ showInput(form.email, placeholder="email") }}
+    {{ showInput(form.age, placeholder="age") }}
+    {{ showInput(form.uid, placeholder="user id") }}
+    {{ showInput(form.password, placeholder="password") }}
+    {{ showInput(form.confirm, placeholder="confirm password") }}
+    <input type="submit" value="Register" />
+  </form>
+{% endblock %}
