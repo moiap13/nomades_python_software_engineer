@@ -1,0 +1,23 @@
+{% extends 'includes/base.html' %}
+
+{% block title %}
+  Login
+{% endblock %}
+
+{% block content%}
+  <h1>Login</h1>
+  <form method="POST" action="{{url_for('login')}}">
+    <label for="id_tbx_uid">User Id : </label>
+    <input type="text" id="id_tbx_uid" name="tbx_uid" placeholder="user id"/>
+    <br/>
+    <label for="id_tbx_pwd">Password </label>
+    <input type="password" id="id_tby_pwd" name="tbx_pwd" placeholder="password" />
+    <br/>
+    <input type="submit" value="send" />
+  </form>
+  {% if error != "" %}
+    <div class="alert alert-danger">
+      <span class="help-inline">{{error}}</span>
+    </div>
+  {% endif %}
+{% endblock %}

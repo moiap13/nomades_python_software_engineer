@@ -35,8 +35,11 @@ numpy_pandas/student_exercises/implementations/data_aquisition/web_scrapping/IMD
 flask/example/firestore/
 flask/example/forms/
 flask/example/wtforms/
-flask/rest_api/
-flask/student_exercises/corrections/
+flask/rest_api/todos/
 flask/student_exercises/implementations/flask_login_firestore/
+
+rest_api/example/
+rest_api/todos/
+rest_api/todo_tuto/
 
 cours/jupyter/

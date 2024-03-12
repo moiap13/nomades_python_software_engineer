@@ -1,0 +1,21 @@
+{% extends 'includes/base.html' %}
+
+{% block title %}
+  User Info
+{% endblock %}
+
+{% block content%}
+  {% from "includes/_form_helpers.html" import showInput %}
+  <h1>User Info</h1>
+  <form method="POST" action="{{url_for('user_methods', id_user=id_user)}}">
+    {{ showInput(form.firstname, placeholder="Firstname", class="", value=user['firstname']) }}
+    {{ showInput(form.lastname, placeholder="Lastname", class="", value=user['lastname']) }}
+    {{ showInput(form.email, placeholder="email", class="", value=user['mail']) }}
+    {{ showInput(form.age, placeholder="age", class="", value=user['age']) }}
+    {{ showInput(form.uid, placeholder="user id", class="", value=user['uid']) }}
+    <input type="submit" value="Modify" />
+  </form>
+  <form method="GET" action="{{url_for('user_methods', id_user=id_user)}}">
+    <input type="submit" value="Delete" />
+  </form>
+{% endblock %}

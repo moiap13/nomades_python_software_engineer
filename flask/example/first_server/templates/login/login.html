@@ -6,7 +6,7 @@ Login
 
 {% block content %}
   <h1>Login</h1>
-  <form action="/login" method="POST">
+  <form action="{{ url_for('login') }}" method="POST">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
       <input type="email" name="tbx_email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

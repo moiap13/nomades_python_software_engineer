@@ -1,0 +1,20 @@
+{% extends 'includes/base.html' %}
+
+{% block title %}
+  Register
+{% endblock %}
+
+{% block content%}
+  {% from "includes/_form_helpers.html" import showInput %}
+  <h1>Register</h1>
+  <form method="POST" action="{{url_for('register')}}">
+    {{ showInput(form.firstname, placeholder="Firstname", class="") }}
+    {{ showInput(form.lastname, placeholder="Lastname", class="") }}
+    {{ showInput(form.email, placeholder="email", class="") }}
+    {{ showInput(form.age, placeholder="age", class="") }}
+    {{ showInput(form.uid, placeholder="user id", class="") }}
+    {{ showInput(form.password, placeholder="password", class="") }}
+    {{ showInput(form.confirm, placeholder="confirm password", class="") }}
+    <input type="submit" value="Register" />
+  </form>
+{% endblock %}

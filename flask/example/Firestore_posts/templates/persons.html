@@ -1,0 +1,14 @@
+{% extends 'includes/base.html' %}
+
+{% block title %}
+  Persons
+{% endblock %}
+
+{% block content%}
+  <form method="POST" action="{{ url_for('post') }}">
+    <input type="text" id="id_tbx_lastname" name="tbx_lastname" placeholder="lastname" value="Pisanello"/>
+    <input type="password" id="id_tbx_firstname" name="tbx_firstname" placeholder="firstname" value="Antonio"/>
+    <input type="submit" value="send" />
+    <input type="reset" value="reset" />
+  </form>
+{% endblock %}

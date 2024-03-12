@@ -1,0 +1,7 @@
+h1 {
+  color: red;
+}
+
+.border_red {
+  border: solid 1px red;
+}
