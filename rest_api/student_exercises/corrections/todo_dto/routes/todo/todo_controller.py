@@ -10,12 +10,13 @@ from .dto.request.create_task import CreateTask
 from .dto.request.update_task import UpdateTask
 
 from .todo_service import TodoService
+from .todo_exceptions import TodoNotFound, TodoEmpty
 
 todos = Blueprint("todo", "todo", url_prefix="/todos", description="TODO API")
 
 todo_service = TodoService()
 
-@todos.route("/tasks")
+@todos.route("/tasks") # /todos/tasks
 class TasksCollection(MethodView):
   # @todos.response(status_code=200, schema=TaskResponse(many=True))
   @todos.response(status_code=200, schema=ListTaskResponse)
@@ -29,32 +30,33 @@ class TasksCollection(MethodView):
   def post(self, task):
     return todo_service.create_new_task(task)
   
-@todos.route("/tasks/<uuid:task_id>")
+@todos.route("/tasks/<uuid:task_id>") # /todos/tasks/{uuid:id}
 class TaskItem(MethodView):
   @todos.response(status_code=200, schema=TaskResponse)
   @todos.response(status_code=404)
   def get(self, task_id):
     try:
       return todo_service.get_one(task_id)
-    except Exception as e:
+    except TodoNotFound as e:
       return {"error": str(e)}, 404 
   
   @todos.arguments(UpdateTask)
   @todos.response(status_code=200, schema=TaskResponse)
   @todos.response(status_code=404)
+  @todos.response(status_code=422)
   def put(self, updated_task, task_id):
-    for task in tasks:
-      if task["id"] == task_id:
-        task.update(updated_task)
-        return task
-    return {"error": f"Task with id {task_id} not found"}, 404
+    try:
+      return todo_service.update_one(updated_task, task_id)
+    except TodoNotFound as e:
+      return {"error": str(e)}, 404
+    except TodoEmpty as e:
+      return {"error": str(e)}, 422
 
 
   @todos.response(status_code=204)
   @todos.response(status_code=404)
   def delete(self, task_id):
-    for task in tasks:
-      if task["id"] == task_id:
-        tasks.remove(task)
-        return {}, 204
-    return {"error": f"Task with id {task_id} not found"}, 404 
+    try:
+      return todo_service.delete_one(task_id), 204
+    except TodoNotFound as e:
+      return {"error": str(e)}, 404
