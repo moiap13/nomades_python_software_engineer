@@ -42,4 +42,7 @@ rest_api/example/
 rest_api/todos/
 rest_api/todo_tuto/
 
+rest_api/student_exercises/corrections/todos/
+rest_api/student_exercises/corrections/booksAPI/
+
 cours/jupyter/
