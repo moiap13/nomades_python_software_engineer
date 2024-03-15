@@ -1,0 +1,4 @@
+flask
+flask-smorest
+pyjwt
+firebase_admin

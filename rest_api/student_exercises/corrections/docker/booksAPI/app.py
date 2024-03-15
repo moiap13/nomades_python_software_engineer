@@ -27,4 +27,4 @@ api.register_blueprint(login)
 api.register_blueprint(borrowings)
 
 if __name__ == "__main__":
-  server.run(debug=True, port=5050)
+  server.run(debug=True, port=5050, host="0.0.0.0")
