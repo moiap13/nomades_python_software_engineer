@@ -2,9 +2,7 @@
   "python.testing.unittestArgs": [
     "-v",
     "-s",
-    "./rest_api/example/books_library/tests/",
-    "-p",
-    "*_test.py"
+    "./rest_api/example/books_library_borrowing/tests/"
   ],
   "python.testing.unittestEnabled": true,
 }

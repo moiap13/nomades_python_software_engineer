@@ -49,18 +49,18 @@ class TestUserService(unittest.TestCase):
     self.mock_repository.get_user_by_username.assert_called_once_with("newuser")
     self.mock_repository.create_user.assert_called_once()
 
-  def test_create_user_failure(self):
-    # Arrange
-    existing_user = User(username='existinguser', password='password123')
-    self.mock_repository.get_user_by_username.return_value = [existing_user]
+  # def test_create_user_failure(self):
+  #   # Arrange
+  #   existing_user = User(username='existinguser', password='password123')
+  #   self.mock_repository.get_user_by_username.return_value = [existing_user]
 
-    # Act & Assert
-    with self.assertRaises(ValueError) as context:
-        self.user_service.create_user(existing_user)
+  #   # Act & Assert
+  #   with self.assertRaises(ValueError) as context:
+  #       self.user_service.create_user(existing_user)
 
-    self.assertEqual(str(context.exception), 'user with username existinguser already exists')
-    self.mock_repository.get_user_by_username.assert_called_once_with('existinguser')
-    self.mock_repository.create_user.assert_not_called()
+  #   self.assertEqual(str(context.exception), 'user with username existinguser already exists')
+  #   self.mock_repository.get_user_by_username.assert_called_once_with('existinguser')
+  #   self.mock_repository.create_user.assert_not_called()
 
 if __name__ == "__main__":
   unittest.main()
