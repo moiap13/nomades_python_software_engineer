@@ -46,7 +46,6 @@ flask/
 
 rest_api/course/
 
-rest_api/example/docker/
 rest_api/example/todo/
 
 rest_api/student_exercises/implementations/books_library_books/
@@ -63,4 +62,3 @@ rest_api/student_exercises/corrections/todo_dto/
 rest_api/student_exercises/corrections/todos/
 
 rest_api/todo_tuto/
-rest_api/todos/
