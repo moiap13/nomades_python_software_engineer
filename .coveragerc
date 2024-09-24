@@ -1,0 +1,12 @@
+[run]
+branch = True
+source =
+    rest_api/example/books_library/routes/users
+    rest_api/example/books_library/routes/books
+    rest_api/example/books_library/routes/login
+
+[report]
+omit =
+    */tests/*
+    */migrations/*
+    */venv/*

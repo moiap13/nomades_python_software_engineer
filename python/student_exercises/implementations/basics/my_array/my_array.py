@@ -1,20 +1,3 @@
-def sort_ascending(arr: list[int]) -> list[int]:
-    """
-    Function that returns the sorted array in ascending order 
-    :param arr: the array to sort
-    :return: the sorted array in ascending order
-    """
-    return None
-
-
-def sort_descending(arr: list[int]) -> list[int]:
-    """
-    Function that returns the sorted array in descending order 
-    :param arr: the array to sort
-    :return: the sorted array in descending order
-    """
-    return None
-
 def sum(tableau: list[int]) -> int:
     """
     Function that returns the sum of the elements of the array
@@ -59,16 +42,6 @@ def min_max(tableau: list[int]) -> tuple[int, int]:
     """
     return None
 
-
-def median(tableau: list[int]) -> int:
-    """
-    Function that returns the median of the elements of the array
-    :param tableau: the array to find the median of
-    :return: the median of the elements of the array
-    """
-    return None
-
-
 def mode(tableau: list[int]) -> int:
     """
     Function that returns the mode of the elements of the array
@@ -85,16 +58,15 @@ def variance(tableau: list[int]) -> float:
     :param tableau: the array to find the variance of
     :return: the variance of the elements of the array
     """
-    return None
-
-        
-    
+    return None 
 
 def standard_deviation(tableau: list[int]) -> float:
     """
     Function that returns the standard deviation of the elements of the array
     The standard deviation is the square root of the variance.
+    
     :param tableau: the array to find the standard deviation of
+    
     :return: the standard deviation of the elements of the array
     """
     return None
@@ -145,5 +117,30 @@ def is_list_of_numbers(tableau) -> bool:
     Function that returns True if the array is a table of numbers
     :param tableau: the array to check if it is a table of numbers
     :return: True if the array is a table of numbers, False otherwise
+    """
+    return None
+
+def sort_ascending(arr: list[int]) -> list[int]:
+    """
+    Function that returns the sorted array in ascending order 
+    :param arr: the array to sort
+    :return: the sorted array in ascending order
+    """
+    return None
+
+
+def sort_descending(arr: list[int]) -> list[int]:
+    """
+    Function that returns the sorted array in descending order 
+    :param arr: the array to sort
+    :return: the sorted array in descending order
+    """
+    return None
+
+def median(tableau: list[int]) -> int:
+    """
+    Function that returns the median of the elements of the array
+    :param tableau: the array to find the median of
+    :return: the median of the elements of the array
     """
     return None

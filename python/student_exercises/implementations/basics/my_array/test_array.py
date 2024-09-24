@@ -41,7 +41,7 @@ class TestArrayFunctions(unittest.TestCase):
         self.assertEqual(max([1, 2, 3, 4, 5]), 5)
 
     def test_min_max(self):
-        self.assertEqual(min_max([1, 2, 3, 4, 5]), [1, 5])
+        self.assertEqual(min_max([1, 2, 3, 4, 5]), (1, 5))
 
     def test_median(self):
         self.assertEqual(median([1, 2, 3, 4, 5]), 3)

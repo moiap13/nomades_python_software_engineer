@@ -1,0 +1,14 @@
+[run]
+branch = True
+source =
+    routes/users
+    routes/books
+    routes/login
+    routes/borrows
+
+[report]
+omit =
+    */tests/*
+    */migrations/*
+    */venv/*
+    */*_repository.py
