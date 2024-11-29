@@ -1,0 +1,55 @@
+name: Run Tests and Check coverage
+
+on:
+  push:
+  pull_request:
+    branches:
+      - template
+
+jobs:
+  test-and-coverage:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Step 1: checkout in the folders
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      
+      # Step 2: Setup python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      # Step 3: Install depencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r rest_api/example/unit_tests/first_API_token/requirements.txt
+          pip install coverage
+      
+      # step 4: Set up Firebase credentials
+      - name: Set Up Firebase credentials
+        run: echo "${{ secrets.FIREBASE_CREDENTIALS_PSE_2024_1112 }}" | base64 -d > rest_api/example/unit_tests/first_API_token/config/pse_2024_1112.json
+      
+      # step 5: Run unit tests and generate coverage report
+      - name: Run tests with coverage
+        run: |
+          coverage run -m unittest rest_api/example/unit_tests/first_API_token/tests/users/test*
+          coverage report -m
+          coverage xml
+          coverage html
+      
+      # step 6: upload html report
+      - name: Upload HTML coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-coverage-report
+          path: htmlcov
+      
+      # step 7: Check coverage threshold
+      - name: Check coverage threshold
+        run: python -m coverage report --fail-under=80
+      
+
+          

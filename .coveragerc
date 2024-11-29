@@ -1,0 +1,9 @@
+[run]
+branch = True
+
+[report]
+omit = 
+  tests/*
+  */*_repository.py
+  */*_controller.py
+  */__init__.py
