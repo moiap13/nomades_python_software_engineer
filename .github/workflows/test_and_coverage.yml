@@ -49,7 +49,7 @@ jobs:
       
       # step 7: Check coverage threshold
       - name: Check coverage threshold
-        run: python -m coverage report --fail-under=80
+        run: python -m coverage report --fail-under=90
       
 
           
