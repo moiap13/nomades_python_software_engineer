@@ -1,20 +1,3 @@
-def sort_ascending(arr: list[int]) -> list[int]:
-    """
-    Function that returns the sorted array in ascending order 
-    :param arr: the array to sort
-    :return: the sorted array in ascending order
-    """
-    return None
-
-
-def sort_descending(arr: list[int]) -> list[int]:
-    """
-    Function that returns the sorted array in descending order 
-    :param arr: the array to sort
-    :return: the sorted array in descending order
-    """
-    return None
-
 def sum(tableau: list[int]) -> int:
     """
     Function that returns the sum of the elements of the array
@@ -56,15 +39,6 @@ def min_max(tableau: list[int]) -> tuple[int, int]:
     Function that returns the minimum and maximum of the elements of the array
     :param tableau: the array to find the minimum and maximum of
     :return: the minimum and maximum of the elements of the array
-    """
-    return None
-
-
-def median(tableau: list[int]) -> int:
-    """
-    Function that returns the median of the elements of the array
-    :param tableau: the array to find the median of
-    :return: the median of the elements of the array
     """
     return None
 
@@ -145,5 +119,32 @@ def is_list_of_numbers(tableau) -> bool:
     Function that returns True if the array is a table of numbers
     :param tableau: the array to check if it is a table of numbers
     :return: True if the array is a table of numbers, False otherwise
+    """
+    return None
+
+
+def sort_ascending(arr: list[int]) -> list[int]:
+    """
+    Function that returns the sorted array in ascending order 
+    :param arr: the array to sort
+    :return: the sorted array in ascending order
+    """
+    return None
+
+
+def sort_descending(arr: list[int]) -> list[int]:
+    """
+    Function that returns the sorted array in descending order 
+    :param arr: the array to sort
+    :return: the sorted array in descending order
+    """
+    return None
+
+
+def median(tableau: list[int]) -> int:
+    """
+    Function that returns the median of the elements of the array
+    :param tableau: the array to find the median of
+    :return: the median of the elements of the array
     """
     return None

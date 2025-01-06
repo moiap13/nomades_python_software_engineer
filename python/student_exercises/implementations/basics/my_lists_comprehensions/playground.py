@@ -1,0 +1,3 @@
+import my_list_comprehension
+
+print(my_list_comprehension.generate_divisible_by_3_or_5())

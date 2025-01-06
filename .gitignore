@@ -9,10 +9,14 @@ Flask_old/
 
 # firestore credential
 *cred.json
+*creds.json
 
 # To Be deleted
 python/exemples/
 
+# Python
+# student_exercises
+# implementations
 python/student_exercises/implementations/basic_input_output/
 python/student_exercises/implementations/bruteforce/
 python/student_exercises/implementations/guess_number/
@@ -21,6 +25,7 @@ python/student_exercises/implementations/pygame/
 python/student_exercises/implementations/random_password_generator/
 python/student_exercises/implementations/some_small_exercises/
 
+# corrections
 python/student_exercises/corrections/
 python/student_exercises/corrections/basic_input_output/
 python/student_exercises/corrections/basics/
@@ -31,5 +36,125 @@ python/student_exercises/corrections/pygame/
 python/student_exercises/corrections/random_password_generator/
 python/student_exercises/corrections/some_small_exercises/
 
-numpy_pandas/
-flask/
+# NUMPY and PANDAS
+# Exemples
+numpy_pandas/examples/data_aquisition/REST_API/
+numpy_pandas/examples/data_aquisition/web_scrapping/basic/country_capitals/
+numpy_pandas/examples/data_aquisition/web_scrapping/basic/IMDB/
+numpy_pandas/examples/data_aquisition/web_scrapping/Selenium/
+numpy_pandas/examples/data_visualization/
+numpy_pandas/examples/jupyter/
+numpy_pandas/examples/matplotlib/
+numpy_pandas/examples/ML/
+numpy_pandas/examples/numpy/
+numpy_pandas/examples/pandas/
+
+# student_exercises
+# implementations
+numpy_pandas/student_exercises/implementations/data_aquisition/REST_API/
+numpy_pandas/student_exercises/implementations/data_aquisition/web_scrapping/basic/country_capitals/
+numpy_pandas/student_exercises/implementations/data_aquisition/web_scrapping/IMDB/
+numpy_pandas/student_exercises/implementations/data_aquisition/web_scrapping/Selenium/
+numpy_pandas/student_exercises/implementations/data_visualization/
+numpy_pandas/student_exercises/implementations/jupyter/
+numpy_pandas/student_exercises/implementations/matplotlib/
+numpy_pandas/student_exercises/implementations/ML/
+numpy_pandas/student_exercises/implementations/numpy/
+numpy_pandas/student_exercises/implementations/pandas/
+
+# corrections
+numpy_pandas/student_exercises/corrections/data_aquisition/REST_API/
+numpy_pandas/student_exercises/corrections/data_aquisition/web_scrapping/basic/country_capitals/
+numpy_pandas/student_exercises/corrections/data_aquisition/web_scrapping/IMDB/
+numpy_pandas/student_exercises/corrections/data_aquisition/web_scrapping/Selenium/
+numpy_pandas/student_exercises/corrections/data_visualization/
+numpy_pandas/student_exercises/corrections/jupyter/
+numpy_pandas/student_exercises/corrections/matplotlib/
+numpy_pandas/student_exercises/corrections/ML/
+numpy_pandas/student_exercises/corrections/numpy/
+numpy_pandas/student_exercises/corrections/numpy copy/
+numpy_pandas/student_exercises/corrections/pandas/
+
+# Flask - Web
+flask/env.yml
+flask/test.py
+
+# example
+flask/example/firestore/
+flask/example/Firestore_posts/
+flask/example/first_server/
+flask/example/first_server_old/
+flask/example/flask_login_session/
+flask/example/flask_login_wtforms/
+flask/example/forms/
+flask/example/forms_files/
+flask/example/jinja/
+flask/example/posts_firestore/
+flask/example/ssti/
+
+# student_exercises
+# implementations
+flask/student_exercises/implementations/Firestore_posts/
+flask/student_exercises/implementations/first_server/
+flask/student_exercises/implementations/flask_login/
+flask/student_exercises/implementations/flask_login_firestore/
+flask/student_exercises/implementations/flask_login_firestore_query/
+flask/student_exercises/implementations/flask_login_without_redirect/
+flask/student_exercises/implementations/flask_login_wtf_firestore/
+
+# corrections
+flask/student_exercises/corrections/Firestore_posts/
+flask/student_exercises/corrections/first_server/
+flask/student_exercises/corrections/flask_login/
+flask/student_exercises/corrections/flask_login_firestore/
+flask/student_exercises/corrections/flask_login_firestore_query/
+flask/student_exercises/corrections/flask_login_without_redirect/
+flask/student_exercises/corrections/flask_login_0/
+
+# Falsk - REST API
+rest_api/env.yaml
+
+# course
+rest_api/course/
+
+# example
+rest_api/example/__init__.py
+rest_api/example/books_library/
+rest_api/example/books_library_borrowing/
+rest_api/example/docker/
+rest_api/example/first_API/
+rest_api/example/jwt/
+rest_api/example/todo/
+rest_api/example/unit_tests/
+
+# student_exercises
+# implementations
+rest_api/student_exercises/implementations/todo_dto/
+rest_api/student_exercises/implementations/todos/
+rest_api/student_exercises/implementations/books_library/
+rest_api/student_exercises/implementations/books_library_books/
+rest_api/student_exercises/implementations/books_library_jwt/
+rest_api/student_exercises/implementations/books_library_wjwt/
+rest_api/student_exercises/implementations/booksAPI/
+rest_api/student_exercises/implementations/first_API/
+rest_api/student_exercises/implementations/first_API_token/
+rest_api/student_exercises/implementations/first_API_users/
+
+# corrections
+rest_api/student_exercises/corrections/todo_dto/
+rest_api/student_exercises/corrections/todos/
+rest_api/student_exercises/corrections/books_library(with_jwt)/
+rest_api/student_exercises/corrections/books_library_books/
+rest_api/student_exercises/corrections/books_library_jwt/
+rest_api/student_exercises/corrections/booksAPI/
+rest_api/student_exercises/corrections/first_API/
+rest_api/student_exercises/corrections/first_API_token/
+rest_api/student_exercises/corrections/first_API_users/
+rest_api/student_exercises/corrections/docker/
+
+# todo
+rest_api/todos/
+rest_api/todo_tuto/
+
+# package file 
+rest_api/__init__.py
