@@ -1,4 +1,4 @@
-def add(a: int, b: int):
+def add(a, b):
     """
     Function that returns the sum of two numbers
     :param a: the first number
