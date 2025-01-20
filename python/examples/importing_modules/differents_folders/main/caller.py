@@ -1,8 +1,6 @@
 import sys, os
-
-parent_folder = os.path.dirname(os.path.dirname(__file__))
-sys.path.append(os.path.join(parent_folder, "modules"))
+wanted_path: str = os.path.join(os.path.dirname(os.path.dirname(__file__)), "modules")
+sys.path.append(wanted_path)
 
 import callee
-
 callee.say_hello()

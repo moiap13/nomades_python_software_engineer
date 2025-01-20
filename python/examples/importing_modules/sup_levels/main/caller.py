@@ -1,5 +1,12 @@
-import sys, os
-sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+import sys
+import os
+
+wanted_path: str = os.path.dirname(os.path.dirname(__file__))
+sys.path.append(wanted_path)
+
 print(sys.path)
-#import callee
-#callee.say_hello()
+
+import callee
+
+callee.say_hello()
+

@@ -1,6 +1,3 @@
-# import modules.callee as c
-# import modules.call.callee as c2
-import modules
+from modu.call.callee import say_hello
 
-print(modules.e)
-# c2.say_hello()
+say_hello()

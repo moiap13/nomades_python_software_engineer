@@ -1,6 +1,5 @@
-# import callee as c
-# from callee import say_hello as sh, PI
-from callee import *
+from calleeee import (say_hello as sh, 
+                      main as m)
 
-print(PI)
-say_hello()
+sh()
+m()
