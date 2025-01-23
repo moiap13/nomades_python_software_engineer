@@ -2,6 +2,7 @@ import csv
 # import matplotlib.pyplot as plt
 # conda install matplotlib
 import os
+import random
 
 CURRENT_DIR: str = os.path.dirname(os.path.realpath(__file__))
 
@@ -188,7 +189,7 @@ def find_employee_with_highest_sales(sales_data: list[dict[str, str | int]], emp
     max_emp: dict[str, str | int] = employee_data[int(max(sales_per_employee, key=sales_per_employee.get))-1]
     return max_emp["Name"], max_emp["Department"]
 
-def find_department_with_highest_sales(sales_data, employee_data):
+def find_department_with_highest_sales(sales_data: list[dict[str, str|int]], employee_data: list[dict[str, str|int]]) -> str:
     """
     Finds the department with the highest sales.
 
@@ -199,7 +200,17 @@ def find_department_with_highest_sales(sales_data, employee_data):
     Returns:
     - department_name (str): Name of the department with the highest sales.
     """
-    return None
+    dep_per_emp: dict[str, str] = {}
+    for emp_data in employee_data:
+        dep_per_emp[emp_data["EmployeeID"]] = emp_data["Department"]
+    
+    sales_per_dep: dict[str, int] = {}
+    for sale_data in sales_data:
+        dep: str = dep_per_emp[sale_data["EmployeeID"]]
+        amount: int = sale_data["Amount"]
+        sales_per_dep[dep] = sales_per_dep.get(dep, 0) + amount
+    return max(sales_per_dep, key=sales_per_dep.get)
+
 
 
 # def plot_sales_by_department(sales_data, employee_data):
