@@ -1,7 +1,7 @@
 def square(x: int) -> int:
     return x**2
 
-def double(x):
+def double(x: int) -> int:
     return 2*x
 
 def main():
