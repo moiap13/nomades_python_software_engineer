@@ -90,7 +90,12 @@ def play_game():
 
         # TODO: Get player's move
         # Hint: Use input() to get the move from the player
-        move: int = int(input(f"Player {current_player}, enter your move (1-9): "))
+        try:
+            move: int = int(input(f"Player {current_player}, enter your move (1-9): "))
+        except:
+            print("Invalid input. Please enter only digits")
+            time.sleep(0.6)
+            continue
 
         # TODO: Check if move is valid
         # A valid move is an integer between 1 and 9 (both inclusive)
