@@ -37,14 +37,14 @@ def check_win(board: list[str], player: str) -> bool:
     Returns:
     - win (bool): True if the player has won, False otherwise.
     """
-    # if board[0] == player and board[1] == player and board[2] == player \
+    # if (board[0] == player and board[1] == player and board[2] == player \
     #   or board[3] == player and board[4] == player and board[5] == player \
     #   or board[6] == player and board[7] == player and board[8] == player \
     #   or board[0] == player and board[3] == player and board[6] == player \
     #   or board[1] == player and board[4] == player and board[7] == player \
     #   or board[2] == player and board[5] == player and board[8] == player \
     #   or board[0] == player and board[4] == player and board[8] == player \
-    #   or board[2] == player and board[4] == player and board[6] == player:
+    #   or board[2] == player and board[4] == player and board[6] == player):
     #     return True
     # return False
     # return board[0] == board[1] == board[2] == player \
@@ -94,7 +94,13 @@ def play_game():
         draw_board(board)
 
         # Hint: Use input() to get the move from the player
-        move: int = int(input("Enter a value between 1 and 9 (both inclusive): "))
+        try:
+            move: int = int(input("Enter a value between 1 and 9 (both inclusive): "))
+        except ValueError:
+            print("Invalid input. Try again!")
+            time.sleep(0.6)
+            continue
+            
 
         # A valid move is an integer between 1 and 9 (both inclusive)
         # And the board for this integer is empty
