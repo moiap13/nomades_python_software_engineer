@@ -27,7 +27,6 @@ python/student_exercises/corrections/basics/my_lists_comprehensions/
 python/student_exercises/corrections/basics/my_sets/
 python/student_exercises/corrections/basics/my_strings/
 python/student_exercises/corrections/basics/my_tuples/
-python/student_exercises/corrections/pygame/
 
 # NUMPY and PANDAS
 # Exemples
@@ -49,7 +48,6 @@ numpy_pandas/student_exercises/implementations/data_aquisition/web_scrapping/bas
 numpy_pandas/student_exercises/implementations/data_aquisition/web_scrapping/IMDB/
 numpy_pandas/student_exercises/implementations/data_aquisition/web_scrapping/Selenium/
 numpy_pandas/student_exercises/implementations/data_visualization/
-numpy_pandas/student_exercises/implementations/jupyter/
 numpy_pandas/student_exercises/implementations/matplotlib/
 numpy_pandas/student_exercises/implementations/ML/
 numpy_pandas/student_exercises/implementations/numpy/
