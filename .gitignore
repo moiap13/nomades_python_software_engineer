@@ -64,7 +64,6 @@ numpy_pandas/student_exercises/corrections/numpy copy/
 numpy_pandas/student_exercises/corrections/pandas/
 
 # Flask - Web
-flask/env.yml
 flask/test.py
 
 # example
