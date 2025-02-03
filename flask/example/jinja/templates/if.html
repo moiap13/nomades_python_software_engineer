@@ -1,0 +1,9 @@
+{% extends "_base.html" %}
+
+{% block content%}
+  {% if age >= 18 %}
+    <h1 style="color: green">You are allowed to vote</h1>
+  {% else %}
+    <h1 style="color: red">You are not allowed to vote</h1>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "_base.html" %}
+
+{% block content%}
+  <div class="row">
+    <div class="col-md-8">
+      {% for fruit in fruits %}
+        <li>{{ fruit }}</li>
+      {% endfor %}
+    </div>
+    <div class="col-md-4">
+      {{ html | safe }}
+    </div>
+  </div>
+{% endblock %}
