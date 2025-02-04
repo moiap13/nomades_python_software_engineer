@@ -79,7 +79,6 @@ flask/example/ssti/
 # student_exercises
 # implementations
 flask/student_exercises/implementations/Firestore_posts/
-flask/student_exercises/implementations/flask_login/
 flask/student_exercises/implementations/flask_login_firestore/
 flask/student_exercises/implementations/flask_login_firestore_query/
 flask/student_exercises/implementations/flask_login_without_redirect/
