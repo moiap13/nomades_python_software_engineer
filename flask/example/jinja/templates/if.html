@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Index</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    {% if age >= 18 %}
+      <h1 style="color: green">You are allowed to vote</h1>
+    {% else %}
+      <h1 style="color: red">You are not allowed to vote</h1>
+    {% endif %}
+  </body>
+</html>

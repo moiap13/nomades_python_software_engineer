@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Index</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <ol>
+      {% for name in names %}
+        <li>{{name}}</li>
+        <li>{{ name | capitalize | upper }}</li>
+      {% endfor %}
+    </ol>
+  </body>
+</html>
