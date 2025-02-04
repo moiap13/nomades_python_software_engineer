@@ -81,7 +81,7 @@ def pan():
     "vegetables": vegetables
   })
 
-  return render_template("pandas.html", df=df.to_html())
+  return render_template("pandas.html", df=df.to_html(classes="table table-striped table-hover"))
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0", port=8081, debug=True)

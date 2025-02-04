@@ -1,0 +1,42 @@
+{% extends "includes/_base.html" %}
+
+{% block title %}User Infos{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-12">
+      <div>
+        <form action="/user_info" method="POST" class="mt-5">
+          <div class="mb-3">
+            <label for="tbx_firstname" class="form-label">Firstname</label>
+            <input type="text" name="tbx_firstname" id="tbx_firstname" class="form-control"  required>
+          </div>
+          
+          <div class="mb-3">
+            <label for="tbx_lastname" class="form-label">Lastname</label>
+            <input type="text" name="tbx_lastname" id="tbx_lastname" class="form-control" required>
+          </div>
+          
+          <div class="mb-3">
+            <label for="tbx_email" class="form-label">Email</label>  
+            <input type="email" name="tbx_email" id="tbx_email" class="form-control" required>
+          </div>
+          
+          <div class="mb-3">
+            <label for="tbx_age" class="form-label">Age</label>
+            <input type="number" name="tbx_age" id="tbx_age" class="form-control" min="13" max="99" required>
+          </div>
+            
+          <div class="mb-3">
+            <label for="tbx_password" class="form-label">Password</label>
+            <input type="password" name="tbx_password" class="form-control" id="tbx_password" required>
+          </div>
+      
+          <!-- <input type="submit" value="Envoyer"> -->
+          <button type="submit" class="btn btn-primary mb-3">Envoyer</button>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+{% endblock %}

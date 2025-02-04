@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Pandas</title>
-  </head>
-  <body>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
-    </nav>
-    {{ df | safe }}
-  </body>
-</html>
+{% extends "_base.html" %}
+
+{% block title %}Pandas{% endblock %}
+
+{% block content %}
+  {{ df | safe }}
+{% endblock %}
