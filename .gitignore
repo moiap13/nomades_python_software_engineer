@@ -72,7 +72,6 @@ flask/example/Firestore_posts/
 flask/example/first_server_old/
 flask/example/flask_login_session/
 flask/example/flask_login_wtforms/
-flask/example/forms/
 flask/example/forms_files/
 flask/example/posts_firestore/
 flask/example/ssti/

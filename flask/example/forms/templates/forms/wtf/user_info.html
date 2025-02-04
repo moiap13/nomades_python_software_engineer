@@ -1,0 +1,22 @@
+{% extends "includes/_base.html" %}
+{% from "includes/_macros.html" import displayInput %}
+
+{% block title %}Index{% endblock %}
+{% block content %}
+  <form method="POST" action="/user_info_wtf" class="mt-5">
+    {{ displayInput(form.firstname) }}
+    {{ displayInput(form.lastname) }}
+    {{ displayInput(form.email) }}
+    {{ displayInput(form.age) }}
+    <div class="form-group">
+      {{ form.gender.label(class="form-label") }}{{ form.gender(class="form-select") }}
+      <ul>
+        {% for errors in form.gender.errors %}
+          <li>{{ errors }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {{ displayInput(form.password) }}
+    {{ form.submit }}
+  </form>
+{% endblock %}

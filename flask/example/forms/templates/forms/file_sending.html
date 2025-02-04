@@ -1,0 +1,10 @@
+{% extends "includes/_base.html" %}
+
+{% block title %}Index{% endblock %}
+{% block content %}
+  <form action="/files" method="POST" enctype="multipart/form-data">
+    <input type="file" name="fileInput" multiple accept="image/*" size="1000">
+    <input type="hidden" value="uploads/image" name="path">
+    <input type="submit" value="Envoyer">
+  </form>
+{% endblock %}
