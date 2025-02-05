@@ -11,7 +11,8 @@
     </div>
   {% endif %}
   
-  <form action="/signup" method="POST">
+  <form action="<!-- TODO: use url_for for register url -->" method="POST">
+    <!-- TODO: add inputs for firstname(text), lastname(text), age(number), profile_picture(file), email(email) -->
     <div class="mb-3">
       <label for="tbx_uid" class="form-label">UID</label>
       <input type="text" class="form-control" name="tbx_uid" id="tbx_uid" placeholder="Enter your username" required/>
