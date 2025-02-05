@@ -5,6 +5,7 @@
     "mechatroner.rainbow-csv",      // Rainbow CSV
     "ms-vscode-remote.remote-wsl",  // Remote - WSL
     "lfm.vscode-makefile-term",     // Makefile Run Tools
-    "samuelcolvin.jinjahtml"        // Jinja
+    "samuelcolvin.jinjahtml",       // Jinja
+    "gruntfuggly.todo-tree",        // Todo Tree
   ]
 }

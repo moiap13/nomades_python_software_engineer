@@ -1,0 +1,29 @@
+{% extends 'includes/_base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+  <h1>Signup</h1>
+  
+  {% if error %}
+    <div class="alert alert-danger">
+      {{ error }}
+    </div>
+  {% endif %}
+  
+  <form action="/signup" method="POST">
+    <div class="mb-3">
+      <label for="tbx_uid" class="form-label">UID</label>
+      <input type="text" class="form-control" name="tbx_uid" id="tbx_uid" placeholder="Enter your username" required/>
+    </div>
+    <div class="mb-3">
+      <label for="tbx_pwd" class="form-label">Password</label>
+      <input type="password" class="form-control" name="tbx_pwd" id="tbx_pwd" placeholder="Enter your password" required/>
+    </div>
+    <div class="mb-3">
+      <label for="tbx_pwd_2" class="form-label">Repeat Password</label>
+      <input type="password" class="form-control" name="tbx_pwd_2" id="tbx_pwd_2" placeholder="Repeat your password" required/>
+    </div>
+    <input type="submit" value="Register" class="btn btn-primary" />
+  </form>
+{% endblock %}

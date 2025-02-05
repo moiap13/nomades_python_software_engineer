@@ -1,0 +1,34 @@
+{% extends "includes/_base.html" %}
+
+{% block title %}User Info{% endblock %}
+{% block content %}
+  <form method="POST" action="/user_info" class="mt-5">
+    <div class="mb-3">
+      <label for="tbx_firstname" class="form-label">Firstname</label>
+      <input type="text" name="tbx_firstname" id="tbx_firstname" placeholder="Firstname" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="tbx_lastname" class="form-label">Lastname</label>
+      <input type="text" name="tbx_lastname" id="tbx_lastname" placeholder="Lastname" class="form-control" required>
+    </div>
+    
+    <div class="mb-3">
+      <label for="tbx_email" class="form-label">Email</label>
+      <input type="email" name="tbx_email" id="tbx_email" placeholder="Email" class="form-control" required>
+    </div>
+    
+    <div class="mb-3">
+      <label for="tbx_age" class="form-label">Age</label>
+      <input type="number" name="tbx_age" id="tbx_age" placeholder="Age" min="12" max="99" class="form-control" required>
+    </div>
+    
+    <div class="mb-3">
+      <label for="tbx_password" class="form-label">Password</label>
+      <input type="password" name="tbx_password" id="tbx_password" placeholder="Password" class="form-control" required>
+    </div>
+
+    <!-- <input type="submit" value="Envoyer"> -->
+    <button type="submit" class="btn btn-primary">Envoyer</button>
+  </form>
+{% endblock %}

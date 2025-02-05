@@ -1,0 +1,9 @@
+{% extends "includes/_base.html" %}
+
+{% block title %}Sending Files{% endblock %}
+{% block content %}
+  <form method="POST" action="/files" enctype="multipart/form-data" class="mt-5">
+    <input type="file" name="fileInput" multiple accept="image/*">
+    <input type="submit" value="Envoyer">
+  </form>
+{% endblock %}

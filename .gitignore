@@ -68,7 +68,6 @@ flask/example/Firestore_posts/
 flask/example/first_server_old/
 flask/example/flask_login_session/
 flask/example/flask_login_wtforms/
-flask/example/forms/
 flask/example/forms_files/
 flask/example/posts_firestore/
 flask/example/ssti/
@@ -84,7 +83,6 @@ flask/student_exercises/implementations/flask_login_wtf_firestore/
 # corrections
 flask/student_exercises/corrections/Firestore_posts/
 flask/student_exercises/corrections/first_server/
-flask/student_exercises/corrections/flask_login/
 flask/student_exercises/corrections/flask_login_firestore/
 flask/student_exercises/corrections/flask_login_firestore_query/
 flask/student_exercises/corrections/flask_login_without_redirect/
