@@ -1,0 +1,21 @@
+{% extends 'includes/_base.html' %}
+{% from "includes/_macros.html" import displayInput %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+  <h1>Signup</h1>
+
+  {% if error %}
+    <div class="alert alert-danger">
+      {{ error }}
+    </div>
+  {% endif %}
+
+  <form action="{{ url_for('register') }}" method="post">
+    {{ displayInput(form.uid, placeholder="User ID", class="form-control") }}
+    {{ displayInput(form.pwd) }}
+    {{ displayInput(form.pwd2) }}
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+{% endblock %}
