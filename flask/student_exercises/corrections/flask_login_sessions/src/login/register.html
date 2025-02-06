@@ -1,0 +1,49 @@
+{% extends 'includes/_base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+  <h1>Signup</h1>
+  
+  {% if error %}
+    <div class="alert alert-danger">
+      {{ error }}
+    </div>
+  {% endif %}
+  
+  <form action="{{ url_for('register') }}" method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label for="tbx_firstname" class="form-label">Firstname</label>
+      <input type="text" class="form-control" name="tbx_firstname" id="tbx_firstname" placeholder="Enter your Firstname" required/>
+    </div>
+    <div class="mb-3">
+      <label for="tbx_lastname" class="form-label">Lastname</label>
+      <input type="text" class="form-control" name="tbx_lastname" id="tbx_lastname" placeholder="Enter your Lastname" required/>
+    </div>
+    <div class="mb-3">
+      <label for="tbx_email" class="form-label">Email</label>
+      <input type="email" class="form-control" name="tbx_email" id="tbx_email" placeholder="Enter your Email" required/>
+    </div>
+    <div class="mb-3">
+      <label for="tbx_age" class="form-label">Age</label>
+      <input type="number" class="form-control" name="tbx_age" id="tbx_age" placeholder="Enter your Age" min="13" required/>
+    </div>
+    <div class="mb-3">
+      <label for="input_pp" class="form-label">Profile Picture</label>
+      <input type="file" class="form-control" name="input_pp" id="input_pp" accept="image/jpg;image/png" required/>
+    </div>
+    <div class="mb-3">
+      <label for="tbx_uid" class="form-label">UID</label>
+      <input type="text" class="form-control" name="tbx_uid" id="tbx_uid" placeholder="Enter your username" required/>
+    </div>
+    <div class="mb-3">
+      <label for="tbx_pwd" class="form-label">Password</label>
+      <input type="password" class="form-control" name="tbx_pwd" id="tbx_pwd" placeholder="Enter your password" required/>
+    </div>
+    <div class="mb-3">
+      <label for="tbx_pwd_2" class="form-label">Repeat Password</label>
+      <input type="password" class="form-control" name="tbx_pwd_2" id="tbx_pwd_2" placeholder="Repeat your password" required/>
+    </div>
+    <input type="submit" value="Register" class="btn btn-primary" />
+  </form>
+{% endblock %}
