@@ -1,0 +1,24 @@
+{% extends 'includes/_base.html' %}
+
+{% block title %}Login{% endblock %}
+{% block content %}
+  <h1>Login</h1>
+
+  {% if error %}
+    <div class="alert alert-danger">
+      {{ error }}
+    </div>
+  {% endif %}
+
+  <form action="{{ url_for('login') }}" method="POST">
+    <div class="mb-3">
+      <label for="tbx_uid" class="form-label">UID</label>
+      <input type="text" class="form-control" name="tbx_uid" id="tbx_uid" placeholder="Enter your username" />
+    </div>
+    <div class="mb-3">
+      <label for="tbx_pwd" class="form-label">Password</label>
+      <input type="password" class="form-control" name="tbx_pwd" id="tbx_pwd" placeholder="Enter your password" />
+    </div>
+    <input type="submit" value="Login" class="btn btn-primary" />
+  </form>
+{% endblock %}
