@@ -96,8 +96,6 @@ flask/student_exercises/corrections/flask_login_without_redirect/
 flask/student_exercises/corrections/flask_login_0/
 
 # Falsk - REST API
-rest_api/env.yaml
-
 # course
 rest_api/course/
 
@@ -110,6 +108,7 @@ rest_api/example/first_API/
 rest_api/example/jwt/
 rest_api/example/todo/
 rest_api/example/unit_tests/
+rest_api/frontend/
 
 # student_exercises
 # implementations
