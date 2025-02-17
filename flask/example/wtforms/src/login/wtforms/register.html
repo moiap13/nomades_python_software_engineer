@@ -1,0 +1,27 @@
+{% from "includes/_macros.html" import createInput %}
+{% extends 'includes/_base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+  <h1>Signup</h1>
+  
+  {% if error %}
+    <div class="alert alert-danger">
+      {{ error }}
+    </div>
+  {% endif %}
+  
+  <form action="{{ url_for('wtf_signup') }}" method="POST" enctype="multipart/form-data">
+    {{ createInput(form.firstname, placeholder="Enter your Firstname", id="tbx_firstname", class="form-control red") }}
+    {{ createInput(form.lastname, placeholder="Enter your lastname") }}
+    {{ createInput(form.uid, placeholder="Enter your Username") }}
+    {{ createInput(form.email, placeholder="Enter your Email") }}
+    {{ createInput(form.age, placeholder="Enter your Age") }}
+    {{ createInput(form.profile_picture) }}
+    {{ createInput(form.pwd, placeholder="Enter your Password") }}
+    {{ createInput(form.pwd2, placeholder="Retype your password") }}
+    
+    <input type="submit" value="Register" class="btn btn-primary" />
+  </form>
+{% endblock %}
