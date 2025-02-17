@@ -114,7 +114,6 @@ rest_api/frontend/
 # implementations
 rest_api/student_exercises/implementations/todo_dto/
 rest_api/student_exercises/implementations/todos/
-rest_api/student_exercises/implementations/books_library/
 rest_api/student_exercises/implementations/books_library_books/
 rest_api/student_exercises/implementations/books_library_jwt/
 rest_api/student_exercises/implementations/books_library_wjwt/
