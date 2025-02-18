@@ -1,0 +1,21 @@
+{% extends 'includes/_base.html' %}
+
+{% block title %}My Posts{% endblock %}
+{% block content %}
+  <h1>My Posts</h1>
+
+  <div class="row">
+    {% for post in posts %}
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text">
+            {{post.body | truncate(20)}}
+          </p>
+          <a href="#" class="card-link">Edit Post</a>
+          <a href="#" class="card-link">Remove Post</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
