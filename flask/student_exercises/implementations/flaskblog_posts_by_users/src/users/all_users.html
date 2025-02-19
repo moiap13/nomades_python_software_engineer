@@ -1,35 +1,8 @@
 {% extends 'includes/_base.html' %}
 
-{% block title %}User Info{% endblock %}
+{% block title %}All Users{% endblock %}
 {% block content %}
-  <h1>User Info</h1>
-  <table class="table table-stripped table-hover">
-    <tbody>
-      <tr>
-        <td colspan="2">
-          <img src="{{ url_for('static', filename='uploads/'+user.profile_picture_filename) }}" alt="profile">
-        </td>
-      </tr>
-      <tr>
-        <th scope="col">Firstname</th>
-        <td>{{ user.firstname }}</td>
-      </tr>
-      <tr>
-        <th scope="col">Lastname</th>
-        <td>{{ user.lastname }}</td>
-      </tr>
-      <tr>
-        <th scope="col">Age</th>
-        <td>{{ user.age }}</td>
-      </tr>
-      <tr>
-        <th scope="col">Email</th>
-        <td>{{ user.email }}</td>
-      </tr>
-      <tr>
-        <th scope="col">UID</th>
-        <td>{{ user.uid }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <h1>All users</h1>
+  <!-- TODO: Display a list <ul><li></li></ul> cotaining user's username -->
+  <!-- TDOD: when clicking using a link <a href=""></a> on a username we are redirected to the page /user/<user_id>/posts-->
 {% endblock %}
