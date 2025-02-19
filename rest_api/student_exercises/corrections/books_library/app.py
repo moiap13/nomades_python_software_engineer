@@ -4,6 +4,7 @@ from flask_smorest import Api
 from src.users.user_controller import users_bp
 from src.books.book_controller import books_bp
 from src.login.login_controller import login_bp
+from src.borrows.borrow_controller import borrows_bp
 
 app = Flask(__name__)
 
@@ -21,6 +22,7 @@ api = Api(app)
 api.register_blueprint(users_bp)
 api.register_blueprint(books_bp)
 api.register_blueprint(login_bp)
+api.register_blueprint(borrows_bp)
 
 if __name__ == "__main__":
   app.run(debug=True, host="0.0.0.0", port=8081)

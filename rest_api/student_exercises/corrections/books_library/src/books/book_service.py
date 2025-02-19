@@ -32,3 +32,6 @@ class BookService:
 
   def get_book_by_isbn(self, isbn: str) -> Book:
     return self.repository.get_book_by_isbn(isbn)
+  
+  def get_book_by_id(self, book_id: str) -> Book:
+    return self.repository.get_book_by_id(book_id)

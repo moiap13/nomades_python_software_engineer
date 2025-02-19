@@ -46,3 +46,6 @@ class UserRepository:
       raise UserNotFound(f"User with email={email} doesn't exist in database")
     
     return UserMapper.to_user(users[0])
+
+  def get_user_by_id(self, user_id: str) -> User:
+    return UserMapper.to_user(self.collection.document(user_id).get())

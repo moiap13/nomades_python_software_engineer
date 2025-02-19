@@ -28,7 +28,11 @@ class BookRepository:
 
     return BookMapper.to_book(books[0])
 
+  def get_book_by_id(self, book_id) -> Book:
+    return BookMapper.to_book(self.collection.document(book_id).get())
+
 if __name__ == "__main__":
   b = Book("", "test manual insert", "1234567890", ["Antonio Pisanello"])
   br = BookRepository()
   print(br.create_book(b))
+
