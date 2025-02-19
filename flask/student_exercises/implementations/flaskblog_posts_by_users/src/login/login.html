@@ -1,0 +1,24 @@
+{% extends 'includes/_base.html' %}
+{% from "includes/_macros.html" import displayInput %}
+
+{% block title %}Login{% endblock %}
+
+{% block imports %}
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+  <h1>Login</h1>
+
+  {% if error %}
+    <div class="alert alert-danger">
+      {{ error }}
+    </div>
+  {% endif %}
+
+  <form action="{{ url_for('login.login') }}" method="POST">
+    {{ displayInput(form.uid_email) }}
+    {{ displayInput(form.pwd) }}
+    <input type="submit" value="Login" class="btn btn-primary" />
+  </form>
+{% endblock %}

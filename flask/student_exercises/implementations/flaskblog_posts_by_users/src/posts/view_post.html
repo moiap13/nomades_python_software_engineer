@@ -1,0 +1,14 @@
+{% extends 'includes/_base.html' %}
+
+{% block title %}View Post{% endblock %}
+{% block content %}
+  <h1>{{ post.title }}</h1>
+  <p>{{ post.body }}</p>
+  <ul>
+    {% for author in post.authors %}
+      <li>{{ author }}</li>
+    {% endfor %}
+  </ul>
+
+  <!-- TODO: Add interaction with post (delete post, edit post) -->
+{% endblock %}
