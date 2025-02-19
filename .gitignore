@@ -103,7 +103,6 @@ rest_api/course/
 rest_api/example/__init__.py
 rest_api/example/books_library/
 rest_api/example/books_library_borrowing/
-rest_api/example/docker/
 rest_api/example/first_API/
 rest_api/example/todo/
 rest_api/example/unit_tests/
