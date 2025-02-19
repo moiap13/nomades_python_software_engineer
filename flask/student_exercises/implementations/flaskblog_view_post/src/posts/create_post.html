@@ -1,0 +1,25 @@
+{% extends 'includes/_base.html' %}
+{% from "includes/_macros.html" import displayInput %}
+
+{% block title %}Create New Post{% endblock %}
+{% block content %}
+  <h1>Create New Post</h1>
+
+  <form action="{{ url_for('posts.add_post') }}" method="POST">
+    {{ displayInput(form.title) }}
+    <div class="form-floating mb-3">
+      {{ form.body(class="form-control", id="floatingTextarea2", style="height: 200px;") }}
+      {{ form.body.label(for="floatingTextarea2") }}
+
+      {% if form.body.errors %}
+        <div class="alert alert-danger">
+          {% for error in form.body.errors %}
+            <span>{{error}}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <button class="btn btn-primary">Post</button>
+  </form>
+{% endblock %}
