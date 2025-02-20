@@ -130,7 +130,6 @@ rest_api/student_exercises/corrections/booksAPI/
 rest_api/student_exercises/corrections/first_API/
 rest_api/student_exercises/corrections/first_API_token/
 rest_api/student_exercises/corrections/first_API_users/
-rest_api/student_exercises/corrections/docker/
 
 # todo
 rest_api/todos/
@@ -138,3 +137,8 @@ rest_api/todo_tuto/
 
 # package file 
 rest_api/__init__.py
+
+
+# coverage file
+.coverage
+.github/

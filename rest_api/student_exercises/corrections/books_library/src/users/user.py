@@ -1,7 +1,7 @@
 class User:
   def __init__(
     self, 
-    id: str = "", 
+    id: str, 
     firstname: str = "", 
     lastname: str = "", 
     username: str = "",
@@ -22,3 +22,4 @@ class User:
   
   def __repr__(self) -> str:
     return self.__str__()
+  
