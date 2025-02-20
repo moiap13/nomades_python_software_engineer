@@ -1,0 +1,26 @@
+{% extends 'includes/_base.html' %}
+
+{% block title %}List Posts{% endblock %}
+{% block content %}
+  <h1>List Posts</h1>
+
+  <div class="row">
+    {% for post in posts %}
+      <div class="col-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><a href="{{ url_for('posts.view_post', post_id=post.id) }}">{{ post.title }}</a></h5>
+            <h6 class="card-subtitle"> {{ post.id }} </h6>
+            <p class="card-text">
+              {{post.body | truncate(20)}}
+            </p>
+            {% if not public %}
+              <a href="#" class="card-link">Edit Post</a>
+              <a href="{{ url_for('posts.delete_post', post_id=post.id) }}" class="card-link">Remove Post</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

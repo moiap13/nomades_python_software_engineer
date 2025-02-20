@@ -1,0 +1,28 @@
+{% extends 'includes/_base.html' %}
+
+{% block title %}Post analysis{% endblock %}
+{% block content %}
+  <h1>Post analysis</h1>
+
+  <div class="row">
+    <div class="col-xl-6">
+      {{ line_chart | safe }}
+    </div>
+    <div class="col-xl-6">
+      {{ bar_chart | safe }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-6">
+      {{ bar_chart_users | safe }}
+    </div>
+    <div class="col-xl-6">
+      {{ pie_chart_users | safe }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-12">
+      {{ pandas_html | safe }}
+    </div>
+  </div>
+{% endblock %}
