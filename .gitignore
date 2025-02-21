@@ -141,4 +141,3 @@ rest_api/__init__.py
 
 # coverage file
 .coverage
-.github/

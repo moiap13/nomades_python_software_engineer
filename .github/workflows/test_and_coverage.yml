@@ -1,0 +1,51 @@
+name : Run Unit tests and Python coverage
+
+on:
+  push:
+  pull_request:
+    branches:
+      - template
+
+jobs:
+  test-and-coverage:
+    runs-on: ubuntu-latest
+
+    steps:
+      # step 1: go to our codebase
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      # step 2: Install python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      
+      # step 3: Install software dependecies
+      - name: Install software dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r rest_api/student_exercises/corrections/books_library/requirements.txt
+          pip install coverage
+      
+      # step 4: Set up firestore credentials
+      - name: Set up firestore credentials
+        run: echo "${{ secrets.FIREBASE_CREDENTIALS_PSE_2025_0103 }}" | base64 -d > rest_api/student_exercises/corrections/books_library/config/pse_2025_0103-creds.json
+      
+      # step 5: Run unit tests
+      - name: Run unit tests
+        run: |
+          coverage run -m unittest discover -s rest_api/student_exercises/corrections/books_library/tests/
+          coverage report -m
+          coverage html
+      
+      # step 6: Upload html folder report
+      - name: Upload HTML coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-coverage-report
+          path: htmlcov
+      
+      # step 7:  limit coverage
+      - name: Test Coverage limit
+        run: coverage report --fail-under=80 
