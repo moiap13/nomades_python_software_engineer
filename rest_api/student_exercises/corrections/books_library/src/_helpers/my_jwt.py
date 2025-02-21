@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 
 from dotenv import dotenv_values
 
-envs = dotenv_values(os.path.join(ROOT_DIR, '.env'))
+envs = dotenv_values('/etc/secrets/.env')
 
 SECRET_KEY: str = envs["JWT_SECRET"]
 ALG: str = envs["JWT_ALG"]

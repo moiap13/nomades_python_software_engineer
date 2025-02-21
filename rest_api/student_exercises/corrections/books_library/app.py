@@ -24,5 +24,9 @@ api.register_blueprint(books_bp)
 api.register_blueprint(login_bp)
 api.register_blueprint(borrows_bp)
 
+@app.route("/")
+def index():
+  return "Welcome to the Books Library API PSE_2025_0103 !"
+
 if __name__ == "__main__":
   app.run(debug=True, host="0.0.0.0", port=8081)

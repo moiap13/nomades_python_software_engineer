@@ -8,7 +8,7 @@ from dotenv import dotenv_values
 from .book import Book
 from .book_repository import BookRepository
 
-GOOGLE_BOOKS_API_KEY: str = dotenv_values(os.path.join(ROOT_DIR, ".env"))["GOOGLE_BOOKS_API_KEY"]
+GOOGLE_BOOKS_API_KEY: str = dotenv_values("/etc/secrets/.env")["GOOGLE_BOOKS_API_KEY"]
 
 class BookService:
   def __init__(self) -> None:
