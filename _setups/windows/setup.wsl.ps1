@@ -14,8 +14,9 @@ Write-Host "Fetching available Linux distributions..." -ForegroundColor Green
 wsl --list --online
 
 # Prompt the user to select a Linux distribution
-Write-Host "`nPlease select a Linux distribution to install (e.g., Ubuntu):"
-$linuxDistro = Read-Host "Enter the distribution name"
+# Write-Host "`nPlease select a Linux distribution to install (e.g., Ubuntu):"
+# $linuxDistro = Read-Host "Enter the distribution name"
+$linuxDistro = 'Ubuntu'
 
 # Install the selected Linux distribution
 Write-Host "Installing $linuxDistro..." -ForegroundColor Green

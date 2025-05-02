@@ -46,4 +46,16 @@ git remote add course "$COURSE_GITHUB_REPO"
 git pull course "$PSE_VERSION"
 git push
 
+# Set the pull strategy to merge
+git config --global pull.rebase false
+
+# ask user name and email
+echo "The following information will be used to configure your git settings:"
+echo "Please enter your name:"
+read -r USER_NAME
+echo "Please enter your email:"
+read -r USER_EMAIL
+git config --global user.name "$USER_NAME"
+git config --global user.email "$USER_EMAIL"
+
 echo "Setup completed successfully in $NOMADES_DIR"
