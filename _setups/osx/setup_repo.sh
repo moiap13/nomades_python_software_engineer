@@ -1,7 +1,7 @@
 #!/bin/bash
 
 validate_pse_version() {
-    if [[ ! "$1" =~ ^(pse|wpr|ppl)_2025_[0-1][0-9][0-1][0-9]$ ]]; then
+    if [[ ! "$1" =~ ^(pse|wpr|ppl|pda|ada)_2025_[0-1][0-9][0-1][0-9]$ ]]; then
         echo "Invalid PSE version. It should be in the format 'pse_2025_xxyy' where xx and yy are digits from 01 to 12."
         exit 1
     fi

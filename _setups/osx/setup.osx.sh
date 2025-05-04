@@ -5,7 +5,7 @@ set -e
 
 # Function to validate the SSH key file name
 validate_pse_version() {
-    if [[ ! "$1" =~ ^pse_2025_[0-1][0-9][0-1][0-9]$ ]]; then
+    if [[ ! "$1" =~ ^(pse|wpr|ppl|pda|ada)_2025_[0-1][0-9][0-1][0-9]$ ]]; then
         echo "Invalid SSH key file name. It should be in the format 'pse_xxyy' where xx and yy are digits from 01 to 12."
         exit 1
     fi
