@@ -24,6 +24,7 @@ USERNAME="$4"
 # Detect Windows home directory for the current user in WSL
 WIN_HOME="/mnt/c/Users/$USERNAME"
 NOMADES_DIR="$WIN_HOME/Documents/nomades"
+NOMADES_DIR="$HOME/Documents/nomades"
 
 # Ensure the target directory exists
 mkdir -p "$NOMADES_DIR"
